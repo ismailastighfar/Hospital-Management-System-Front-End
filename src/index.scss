@@ -3,21 +3,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 
-:root {
+// colors : 
 
-  --primaryColor :  #26447B
-  --secondaryColor : #FF8F3F
+  $primary-color :  #26447B;
+  $secondary-Color : #FF8F3F;
+  $dark-blue : #153572;
+  $light-blue : #0d88e6;
+  $gray-text : #757678;
+  $btn-blue : #247BEA;
 
-  --primaryFont : "Work Sans"
-  --secondaryFont : "Ubuntu", "sans-serif"
+// fonts : 
 
-  --darkBlue : #153572
-  --lightBlue : #0d88e6
+  $primary-font : "Work Sans";
+  $secondary-font : "Ubuntu", "sans-serif";
 
-  --gray : #757678
-  --btnBlue : #247BEA
-
-}
+  
 
 
 
