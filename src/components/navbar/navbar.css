@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0d88e6;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem 6rem;
+}
+
+.navbar-links {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-links-logo {
+  margin-right: 2rem;
+}
+
+.navbar-links-logo p {
+  color: #757678;
+  font-size: 20px;
+}
+
+.navbar-links-logo p span {
+  color: #0d88e6;
+}
+
+.navbar-links-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  padding-left: 200px;
+}
+
+.navbar-sign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar-links-container p,
+.navbar-menu-container p {
+  color: #153572;
+  font-family: "Ubuntu", "sans-serif";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  text-transform: capitalize;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+.navbar-sign .btn-2 {
+  padding: 0.5rem 1rem;
+  margin: 8px;
+  color: #247BEA;
+  outline: none;
+  border: 1px solid #247BEA;
+  background-color: #fff;
+  font-family: "Ubuntu", "sans-serif";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-sign .btn-2:hover {
+  color: #fff;
+  background-color: #247BEA;
+}
+
+.navbar-sign .btn-1 {
+  padding: 0.5rem 1rem;
+  margin: 8px;
+  color: #fff;
+  background-color: #247BEA;
+  font-family: "Ubuntu", "sans-serif";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.navbar-sign .btn-1:hover {
+  color: #247BEA;
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #247BEA;
+}
+
+.navbar-menu {
+  margin-left: 1rem;
+  display: none;
+  position: relative;
+}
+
+.navbar-menu svg {
+  cursor: pointer;
+}
+
+.navbar-menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #0d88e6;
+  padding: 2rem;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  margin-top: 1rem;
+  min-width: 250px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 5 rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.navbar-menu-container p {
+  margin: 1rem 0;
+}
+
+.navbar-menu-sign {
+  display: none;
+}
+
+.navbar-menu-container-links a:hover {
+  color: #fff;
+}
+
+@media (max-width: 1050px) {
+  .navbar-links-container {
+    display: none;
+  }
+  .navbar-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    padding: 2rem 4rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar {
+    padding: 2rem;
+  }
+  .navbar-sign {
+    display: none;
+  }
+  .navbar-menu-container {
+    top: 20px;
+  }
+  .navbar-menu-sign {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+  }
+  .navbar-menu-sign button {
+    padding: 0.5rem 1rem;
+    color: #247BEA;
+    outline: none;
+    border: 1px solid #247BEA;
+    background-color: #fff;
+    font-family: "Ubuntu", "sans-serif";
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .navbar-menu-sign .btn-1 {
+    margin-right: 6px;
+  }
+  .navbar-menu-sign button:hover {
+    background-color: #153572;
+    color: #fff;
+  }
+}
+
+a:hover {
+  color: #0d88e6;
+}
+/*# sourceMappingURL=navbar.css.map */

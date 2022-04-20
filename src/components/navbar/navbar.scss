@@ -1,0 +1,207 @@
+@import '../../index.scss';
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 6rem ;
+
+}
+
+.navbar-links{
+    flex: 1;
+    display: flex ;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.navbar-links-logo{
+
+    margin-right: 2rem;
+
+    p {
+        color: $gray-text;
+        font-size: 20px;
+    }
+     p span{
+        color: $light-blue;
+    }
+}
+
+.navbar-links-container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-left: 200px;
+}
+
+.navbar-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-links-container p ,
+.navbar-menu-container p {
+    color: $dark-blue;
+    font-family: $secondary-font;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px; 
+    text-transform: capitalize;
+    margin: 0 1rem;
+    cursor: pointer ;
+}
+
+
+.navbar-sign .btn-2 {
+    padding: 0.5rem 1rem;
+    margin: 8px;
+    color: $btn-blue;
+    outline: none;
+    border: 1px solid $btn-blue;
+    background-color: #fff;
+    font-family: $secondary-font;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar-sign .btn-2:hover{
+    color: #fff;
+    background-color: $btn-blue;
+}
+
+.navbar-sign .btn-1{
+    padding: 0.5rem 1rem;
+    margin: 8px;
+    color: #fff;
+    background-color: $btn-blue;
+    font-family: $secondary-font;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.navbar-sign .btn-1:hover{
+    color: $btn-blue;
+    background-color: #fff;
+    outline: none;
+    border: 1px solid $btn-blue;
+}
+
+
+.navbar-menu {
+    margin-left: 1rem;
+    display: none;
+    position: relative;
+}
+
+.navbar-menu svg {
+    cursor: pointer;
+}
+
+.navbar-menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $light-blue;
+    padding: 2rem;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    margin-top: 1rem;
+    min-width: 250px;
+    border-radius: 5px;
+    box-shadow: 0 0 5 rgba(0 , 0 , 0 , 0.2 ) ;
+    z-index: 1;
+}
+
+
+.navbar-menu-container p {
+    margin: 1rem 0;
+}
+
+.navbar-menu-sign{
+    display: none;
+}
+
+
+
+.navbar-menu-container-links a:hover{
+    color: #fff;
+}
+
+@media (max-width: 1050px)   {
+    .navbar-links-container{
+        display: none;
+    }
+
+    .navbar-menu{
+        display: flex ;
+    }
+}
+
+@media (max-width: 700px)   {
+    .navbar{
+        padding: 2rem 4rem;
+    }
+}
+
+@media (max-width: 550px)   {
+    .navbar{
+        padding: 2rem ;
+    }
+
+    .navbar-sign{
+        display: none;
+    }
+
+    .navbar-menu-container {
+        top: 20px;
+    }
+
+    .navbar-menu-sign{
+        display: flex;
+        padding: 10px;
+    }
+
+    .navbar-menu-sign button {
+        padding: 0.5rem 1rem;
+        color: $btn-blue;
+        outline: none;
+        border: 1px solid $btn-blue;
+        background-color: #fff;
+        font-family: $secondary-font;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .navbar-menu-sign .btn-1{
+        margin-right: 6px;
+    }
+
+    .navbar-menu-sign button:hover{
+        background-color: $dark-blue;
+        color: #fff;
+    }
+}
+
+a:hover{
+    color: $light-blue;
+}
+
+
+
+
+

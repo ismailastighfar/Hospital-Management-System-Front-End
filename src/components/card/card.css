@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0d88e6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.cart-card {
+  padding: 50px 15px;
+  width: 15%;
+  border-radius: 10px;
+  background-color: white;
+  border: 1px;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.cart-box {
+  padding: 30px;
+}
+
+.cart-box img {
+  width: 30%;
+  height: 30%;
+  padding: 5px;
+  margin: 5px;
+}
+
+.cart-box h3 {
+  font-size: 25px;
+  padding: 15px 0 7px;
+  color: #153572;
+}
+
+@media screen and (max-width: 1190px) {
+  .cart-card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cart-card {
+    width: 30%;
+  }
+}
+/*# sourceMappingURL=card.css.map */

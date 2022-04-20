@@ -1,0 +1,56 @@
+@import '../../../index.scss';
+
+.specialty{
+    padding: 5px 40px ;
+    margin: 5px;
+}
+
+.carousel{
+    overflow: hidden;
+    cursor:grab;
+    
+}
+
+.inner{
+    min-width: 2300px;
+}
+
+.item{
+   display: flex;
+   justify-content: space-between;
+   pointer-events : none;
+}
+
+.heading{
+    padding-left: 10px;
+}
+
+.heading h1 {
+    text-align: left;
+    position: relative;
+    color: $primary-color;
+    font-size: 30px;
+    font-family: $secondary-font;
+    font-weight: 500;
+    padding-bottom: 8px;
+    margin: 5px;
+
+    span{
+        color: $secondary-Color; 
+    }
+}
+
+.heading p{
+    color: $gray-text;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 5px;
+    max-width: 700px;
+}
+
+// @media screen and (max-width:700px) {
+//     .item{
+//         display: block;
+//     }
+// }
+
