@@ -1,0 +1,70 @@
+@import '../../../index.scss';
+.app__header{
+    margin: 4rem 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    @media screen and ( max-width: 950px){
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem;
+        text-align: center;
+        gap: 2rem;
+        .app__header-info{
+            h1{
+                font-size: 2rem;
+                line-height: 2rem;
+            }
+            p{
+                margin: 1rem 0;
+            }
+        }
+    }
+    @media screen and ( max-width: 650px){
+        margin: 1rem;
+        
+    } 
+}
+.app__header-info{
+    flex: 1;
+    h1{
+        font-family: $secondary-font;
+        color: $primary-color;
+        font-size: 3rem;
+        line-height: 3rem;
+        font-weight: 600;
+        span{
+            color: $secondary-Color;
+        }
+    }
+    p{
+        margin: 2rem 0 4rem 0;
+        font-size: 1.1rem;
+        font-family: $secondary-font ;
+        color: $gray-text;
+        word-spacing: 0.3rem;
+    }
+    
+}
+.app__header-img{
+    flex: 1;
+    display: flex;
+    justify-content: end;
+    position: relative;
+    img{
+        width: 100%;
+    }
+    @media screen and ( max-width: 950px){
+        width: 520px;
+    }
+    @media screen and ( max-width: 650px){
+        width: 90%;
+    }
+    .sheld{
+        position: absolute;
+        width: 130px;
+        top: 30px;
+        
+    }
+}

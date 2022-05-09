@@ -1,0 +1,68 @@
+@import '../../../index.scss';
+.app__services {
+
+    margin: 4rem 6rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    @media screen and ( max-width: 950px){
+        flex-direction: column;
+        align-items: center;
+        margin: 2rem;
+    }
+    @media screen and ( max-width: 650px){
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+        gap: 2rem;
+    } 
+
+}
+
+.app__services-info{
+    flex: 1;
+    h1{
+        font-family: $secondary-font;
+        color: $primary-color;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: 600;
+    }
+    p{
+        margin: 2rem 0;
+        font-size: 1.1rem;
+        font-family: $secondary-font ;
+        color: $gray-text;
+        word-spacing: 0.3rem;
+    }
+}
+.app__services-img{
+    flex: 1;
+    img{
+        width: 100%;
+    }
+}
+.services{
+   display: flex;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+    column-gap: .6rem;
+    margin: 1rem 0;
+    .service_item{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: $dark-blue;
+        h2{
+            font-size: 1.1rem;
+            font-family: $primary-font;
+        }
+    }
+}
+.app__services-contact-buttons{
+    display: flex;
+    gap: 1rem;
+}

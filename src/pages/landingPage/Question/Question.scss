@@ -1,0 +1,24 @@
+@import '../../../index.scss';
+
+.app__question{
+    margin: 4rem 0;
+    padding: 0 6rem ;
+    overflow: hidden;
+    position: relative;
+    height: 400px;
+    background-image: linear-gradient(to left , #ff8f3fbf , transparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    img{
+        position: absolute;
+        object-fit: cover;
+        width: 100%;
+        z-index: -1;
+    }
+}
+.app__question-head{
+    color: $primary-color;
+    font-family: $secondary-font;
+}
