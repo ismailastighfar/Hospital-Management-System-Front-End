@@ -63,37 +63,7 @@ ul li a{
     color: #fff;
 }
 
-form{
-    padding-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 50px;
-}
 
-form .env{   
-    margin-right: 10px;
-}
-
-form input{
-    width: 100%;
-    background-color: transparent;
-    color: #ccc;
-    border: 0;
-    outline: none;
-}
-
-form button{
-    background: transparent;
-    border: 0;
-    outline: none;
-    cursor: pointer;
-}
-
-form button .arrow{
-    color: #ccc;
-}
 
 .social .fab{
     width:30px;

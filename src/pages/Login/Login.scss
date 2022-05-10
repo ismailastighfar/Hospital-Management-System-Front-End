@@ -1,0 +1,21 @@
+.app__login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.app__login-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    width: 320px;
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+}
+.app_input{
+    padding: .6rem 1rem;
+}
