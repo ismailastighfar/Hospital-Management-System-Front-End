@@ -3,25 +3,39 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 2rem 6rem ;
-
+    align-items: baseline;
+    margin: 0;
+    padding: 0.5rem 6rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    z-index: 1000;
+    @media screen and (max-width: 1150px) {
+        padding: 0 2rem;
+    }
+    @media screen and (max-width: 650px) {
+        padding: 0 1rem;
+    }
 }
 
 .navbar-links{
     flex: 1;
-    display: flex ;
+    display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: baseline;
+    gap: 1rem;
+    max-width: min-content;
+    padding: 1rem 0;
+    
 }
 
 .navbar-links-logo{
-
-    margin-right: 2rem;
-
+    user-select: none;
     p {
         color: $gray-text;
-        font-size: 20px;
+        font-size: 30px;
     }
      p span{
         color: $light-blue;
@@ -32,173 +46,92 @@
     display: flex;
     flex-direction: row;
     text-align: center;
-    padding-left: 200px;
+    @media screen and (max-width: 950px) {
+        display: none;
+    }
 }
 
-.navbar-sign {
+.navbar-sign{
     display: flex;
     justify-content: flex-end;
+    gap: 1rem;
     align-items: center;
+    margin-left: 1rem;
+    @media screen and (max-width: 950px){
+        display: none;
+    }
 }
 
-.navbar-links-container p ,
-.navbar-menu-container p {
+.navbar-links-container a ,
+.navbar-menu-container a {
     color: $dark-blue;
     font-family: $secondary-font;
     font-weight: 500;
-    font-size: 15px;
-    line-height: 25px; 
+    font-size: 17px;
+    line-height: 25px;
+    width: max-content; 
     text-transform: capitalize;
     margin: 0 1rem;
     cursor: pointer ;
 }
 
-
-.navbar-sign .btn-2 {
-    padding: 0.5rem 1rem;
-    margin: 8px;
-    color: $btn-blue;
-    outline: none;
-    border: 1px solid $btn-blue;
-    background-color: #fff;
-    font-family: $secondary-font;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.navbar-sign .btn-2:hover{
-    color: #fff;
-    background-color: $btn-blue;
-}
-
-.navbar-sign .btn-1{
-    padding: 0.5rem 1rem;
-    margin: 8px;
-    color: #fff;
-    background-color: $btn-blue;
-    font-family: $secondary-font;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.navbar-sign .btn-1:hover{
-    color: $btn-blue;
-    background-color: #fff;
-    outline: none;
-    border: 1px solid $btn-blue;
-}
-
-
 .navbar-menu {
     margin-left: 1rem;
     display: none;
-    position: relative;
+    position: absolute;
+    right: 1rem;
+    
 }
 
-.navbar-menu svg {
-    cursor: pointer;
+.navbar-menu-button{
+    display: none;
+    position: relative;
+    margin-right: 2rem;
+    justify-content: center;
+    align-items: flex-end;
+    @media screen and (max-width: 950px) {
+        display: flex;
+        margin-right: 1rem;
+    }
+    svg {
+        cursor: pointer;
+        color: $light-blue;
+        position: absolute;
+        inset: auto;
+        z-index: 1000;
+        font-size: 20px;
+    }
+        
+    
 }
 
 .navbar-menu-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
-    background-color: $light-blue;
-    padding: 2rem;
-    position: absolute;
-    right: 0;
-    top: 40px;
-    margin-top: 1rem;
-    min-width: 250px;
-    border-radius: 5px;
-    box-shadow: 0 0 5 rgba(0 , 0 , 0 , 0.2 ) ;
+    background-color: rgba(105, 105, 105, 0.279);
+    backdrop-filter: blur(50px);
+    padding: 6rem 2rem;
+    position: fixed;
+    right: -2rem;
+    top: 0;
+    width: 90%;
+    height: 100vh;
     z-index: 1;
-}
-
-
-.navbar-menu-container p {
-    margin: 1rem 0;
-}
-
-.navbar-menu-sign{
-    display: none;
-}
-
-
-
-.navbar-menu-container-links a:hover{
-    color: #fff;
-}
-
-@media (max-width: 1050px)   {
-    .navbar-links-container{
+    @media screen and (min-width: 950px) {
         display: none;
     }
-
-    .navbar-menu{
-        display: flex ;
-    }
 }
-
-@media (max-width: 700px)   {
-    .navbar{
-        padding: 2rem 4rem;
-    }
-}
-
-@media (max-width: 550px)   {
-    .navbar{
-        padding: 2rem ;
+.navbar-menu-container-links{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    a{
+         font-size: 2rem;
     }
 
-    .navbar-sign{
-        display: none;
-    }
-
-    .navbar-menu-container {
-        top: 20px;
-    }
-
-    .navbar-menu-sign{
-        display: flex;
-        padding: 10px;
-    }
-
-    .navbar-menu-sign button {
-        padding: 0.5rem 1rem;
-        color: $btn-blue;
-        outline: none;
-        border: 1px solid $btn-blue;
-        background-color: #fff;
-        font-family: $secondary-font;
-        font-weight: 500;
-        font-size: 15px;
-        line-height: 25px;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .navbar-menu-sign .btn-1{
-        margin-right: 6px;
-    }
-
-    .navbar-menu-sign button:hover{
-        background-color: $dark-blue;
-        color: #fff;
-    }
-}
-
-a:hover{
-    color: $light-blue;
 }
 
 

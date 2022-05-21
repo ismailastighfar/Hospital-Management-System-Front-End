@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 import {useState , useEffect , useRef} from 'react';
 
 
-import './specialties.css'
+import './specialties.scss'
 
 
 export default function Specialties() {

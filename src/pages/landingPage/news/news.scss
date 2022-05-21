@@ -1,196 +1,45 @@
 @import '../../../index.scss';
-
-.news{
-    width: 80%;
-    margin: auto;
-}
-
-.banner{
+.app__news{
+    margin: 4rem 6rem;
     display: flex;
-    margin-top: 80px;
-}
-
-.left-column , .right-column{
-    flex-basis: 50%;
-}
-
-.right-column img{
-    width:80%;
-    margin-top: 10px;
-    padding: 10px;
-}
-
-.left-column{
-    margin-top: 80px;
-    padding: 10px;
-}
-
-.left-column h1{
-    font-size: 80px;
-    font-family: $primary-font;
-    color: $primary-color;
-
-    span{
-        color: $secondary-Color;
+    justify-content: space-between;
+    align-items: center ;
+    @media screen and (max-width: 950px) {
+        margin: 4rem 4rem;  
+        flex-direction: column-reverse;
+    }
+    @media screen and (max-width: 650px) {
+        margin: 1.5rem;
     }
 }
-
-.left-column h3{
-    font-size: 35px;
-    color: $secondary-Color;
-
-    span{
+.app__news-info{
+    flex: 1;
+    h1{ 
+        margin: 2rem 0 0 0 ;
+        font-size: 3rem;
+        font-family: $primary-font;
         color: $primary-color;
+        font-weight: 600;
+        span{
+            color: $secondary-Color;
+            }
+    }
+    p{
+        color: $gray-text;
+        font-family: $secondary-font;
+        margin: 2rem 0;
     }
 }
-
-.left-column p{
-    color: $gray-text;
-    font-size: 15px;
-    margin: 40px 0;
-    padding: 5px;
+.app__news-info_button{
+    display: flex;
+    gap: 2rem;
 }
-
-.btn button{
-    padding: 7px 30px;
-    margin: 15px;
-    outline: none;
-    border: 1px solid $btn-blue;
-    border-radius: 20px;
-    cursor: pointer;
-    color: $gray-text;
-    background: transparent;
-}
-
-.btn .primary-btn{
-     background: linear-gradient($btn-blue , $primary-color);
-     box-shadow: 0 2px 15px rgba(248,38,103,0.26) ;
-     color: white;
-}
-
-.btn .primary-btn:hover{
-    background: #fff;
-    color: $btn-blue ;
-}
-
-.btn .secondary-btn:hover{
-    background: linear-gradient($btn-blue , $primary-color);
-    box-shadow: 0 2px 15px rgba(248,38,103,0.26) ;
-    color: white;
-}
-
-@media screen and (max-width:1273px) {
-    .left-column{
-        margin-top: 50px;
-        padding: 5px;
-    }
-
-    .left-column h1{
-        font-size:70px;
-    }
-    
-    .left-column h3{
-        font-size: 35px;
-    }
-    
-    .left-column p{
-        font-size: 10px;
-        margin: 30px 0;
-        padding: 5px;
-    }
-    
-    .btn button{
-        padding: 7px 20px;
-        margin: 15px;
-    }
-    
-    .right-column img{
-        width:70%;
-        margin-top: 10px;
-        padding: 10px;
-    }
-
-}
-
-@media screen and (max-width:1083px) {
-    .left-column{
-        margin-top: 50px;
-        padding: 5px;
-    }
-
-    .left-column h1{
-        font-size:60px;
-    }
-    
-    .left-column h3{
-        font-size: 30px;
-    }
-    
-    .left-column p{
-        font-size: 10px;
-        margin: 30px 0;
-        padding: 5px;
-    }
-    
-    .btn button{
-        padding: 7px 20px;
-        margin: 10px;
-    }
-    
-    .right-column img{
-        width:80%;
-    }
-
-}
-
-@media screen and (max-width:930px) {
-    .left-column .right-column{
-        flex-basis: 100%;
-    }
-
-    .banner{
-        flex-direction: column-reverse;
-        margin-top: 0;
-    }
-
-    .right-column img{
-        width: 50%;
-        margin-left: 150px;
-    }
-}
-
-
-@media screen and (max-width:740px) {
-    .left-column .right-column{
-        flex-basis: 100%;
-    }
-
-    .news{
-        width: 70%;
-        margin: auto;
-    }
-
-    .banner{
-        flex-direction: column-reverse;
-        margin-top: 0;
-    }
-
-    .right-column img{
-        width: 70%;
-        margin-left: 50px;
-    }
-
-    .left-column h1{
-        font-size:50px;
-    }
-    
-    .left-column h3{
-        font-size: 30px;
-    }
-    
-    .left-column p{
-        font-size: 12px;
-        margin: 30px 0;
-        padding: 5px;
+.app__news-img{
+    flex: 1;
+    display: flex;
+    align-self: flex-end;
+    padding: 2rem;
+    img{
+        width: 100%;
     }
 }

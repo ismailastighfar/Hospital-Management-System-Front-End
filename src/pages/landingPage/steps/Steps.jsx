@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './steps.css'
+import './steps.scss'
 
 import SearchDoc  from '../../../assets/icons/doctor.png'
 import QA  from '../../../assets/icons/smartphone.png'

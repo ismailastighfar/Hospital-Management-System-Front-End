@@ -4,20 +4,22 @@
     margin: 1rem 0;
     button{
         cursor: pointer;
-        background-color: #fff;
+        background-color: transparent;
         font-family: $secondary-font;
-        color: $btn-blue;
+        color: $gray-text;
         padding: .5rem 2rem;
-        border: 1px solid $btn-blue;
-        border-radius: 6px;
-        font-size: 1.2rem;
-        transition: all 0,4s ease-in;
+        min-width: 100%;
+        border: 1px solid transparent;
+        font-size: 1rem;
+        transition: all 0.3s ease-in;
+        border: 1px solid $gray-text;
 
     }
+    
     button:hover{
-        background-color: $light-blue;
         color: #fff;
-        box-shadow: 10px 10px 20px rgba(101, 101, 101, 0.171);
+        border: 1px solid $light-blue;
+        background-color: $btn-blue;
         
     }
 

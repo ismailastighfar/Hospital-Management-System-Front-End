@@ -27,7 +27,7 @@ function Services() {
             {
               services.map(service => { 
                 return ( 
-                  <div className="service_item">
+                  <div className="service_item" key={service}>
                     < ImCheckboxChecked/>
                     <h2>{ service }</h2>
                   </div>

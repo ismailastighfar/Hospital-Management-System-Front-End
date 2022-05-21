@@ -1,21 +1,104 @@
+@import '../../index.scss';
+
 .app__login{
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    margin: 2rem 6rem 0 6rem;
+    @media screen and (max-width: 950px) {
+        margin: 2rem;
+        flex-direction: column-reverse;
+    }
+    @media screen and (max-width: 650px) {
+        margin: 1rem;
+    }
+}
+.app__login-info{
+    flex: 2;
+    padding: 2rem ;
     display: flex;
     justify-content: center;
     align-items: center;
-    
-}
-.app__login-wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
     text-align: center;
-    width: 320px;
-    form{
-        display: flex;
-        flex-direction: column;
-        gap: 1em;
+    flex-direction: column;
+    h1{
+        font-family: $secondary-font;
+        color: $primary-color;
+        span{
+            color: $secondary-Color;
+        }
+    }
+    img{
+        width: 80%;
+    }
+    @media screen and (max-width: 950px) {
+        margin: 4rem 0;
+        img{
+            width: 100%;
+        }
     }
 }
-.app_input{
-    padding: .6rem 1rem;
+.app__login-down-icon{
+    font-size: 40px;
+    margin: 2rem 0 0 0 ;
+    display: none;
+    color: $secondary-Color;
+    @media screen and (max-width: 950px) {
+       display: block;
+    }
 }
+.app__login-wrapper{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0;
+    border-radius: 12px;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: start;
+    padding: 5rem 2rem 1rem 2rem;
+    width: 440px;
+    
+    form{   
+        margin: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    a{
+        font-family: $secondary-font;
+        color: $light-blue;
+    }
+    @media screen and (max-width: 950px) {
+        margin:  0;
+        padding-top: 0;
+    }
+}
+.app__login-from-input{
+    min-width: max-content;
+    display: flex;
+    align-items: center;
+    label{
+        cursor: pointer;
+        padding: .8rem 1rem;
+        border-radius:  4px 0 0 4px ;
+        border: 1px solid #40404040;
+        border-right: none;
+        background: transparent;
+        outline: 1px solid #40404040;
+        transition: all 0.2s ease-in;
+        svg{
+            font-size: 1.1rem;
+            color: $gray-text;
+        }
+    }
+}
+
+.app__login-buttons{
+    margin:2rem 0;
+    display: flex;
+    gap:1rem;
+    align-items: center;
+    width: 100%;
+}
+
