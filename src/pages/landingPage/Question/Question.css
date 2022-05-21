@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0d88e6;
+}
+
+.app__question {
+  margin: 4rem 0;
+  padding: 0 6rem;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#ff8f3fbf), to(transparent));
+  background-image: linear-gradient(to left, #ff8f3fbf, transparent);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.app__question img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  z-index: -1;
+}
+
+.app__question-head {
+  color: #26447B;
+  font-family: "Ubuntu", "sans-serif";
+}
+/*# sourceMappingURL=Question.css.map */

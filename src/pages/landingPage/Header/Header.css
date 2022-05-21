@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0d88e6;
+}
+
+.app__header {
+  margin: 4rem 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (max-width: 950px) {
+  .app__header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin: 2rem;
+    text-align: center;
+    gap: 2rem;
+  }
+  .app__header .app__header-info h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .app__header .app__header-info p {
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__header {
+    margin: 1rem;
+  }
+}
+
+.app__header-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.app__header-info h1 {
+  font-family: "Ubuntu", "sans-serif";
+  color: #26447B;
+  font-size: 3rem;
+  line-height: 3rem;
+  font-weight: 600;
+}
+
+.app__header-info h1 span {
+  color: #FF8F3F;
+}
+
+.app__header-info p {
+  margin: 2rem 0 4rem 0;
+  font-size: 1.1rem;
+  font-family: "Ubuntu", "sans-serif";
+  color: #757678;
+  word-spacing: 0.3rem;
+}
+
+.app__header-img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  position: relative;
+}
+
+.app__header-img img {
+  width: 100%;
+}
+
+@media screen and (max-width: 950px) {
+  .app__header-img {
+    width: 520px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__header-img {
+    width: 90%;
+  }
+}
+
+.app__header-img .sheld {
+  position: absolute;
+  width: 130px;
+  top: 30px;
+}
+/*# sourceMappingURL=Header.css.map */

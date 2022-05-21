@@ -2,6 +2,7 @@
 import './App.css';
 import {Navbar ,  Footer} from './components';
 import {Header,Question, Feedback, Services, Specialities , Steps , News } from './pages/landingPage';
+import Search from './pages/Search/Search';
 
 
 
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
         
-       <Navbar />
+       {/* <Navbar />
        <Header/>
        <Steps />
        <Services/>
@@ -17,7 +18,9 @@ function App() {
        <Question/>
        <News />
        <Feedback/>
-       <Footer />
+       <Footer /> */}
+
+       <Search />
 
     </div>
   );
