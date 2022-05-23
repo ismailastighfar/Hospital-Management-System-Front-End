@@ -1,0 +1,74 @@
+@import '../../index.scss';
+
+.docs-card img{
+    width: 100%;
+}
+
+
+
+/* Three columns side by side */
+.docs-column {
+    float: left;
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  /* Display the columns below each other instead of side by side on small screens */
+  @media screen and (max-width: 650px) {
+    .docs-column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  /* Add some shadows to create a card effect */
+  .docs-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Some left and right padding inside the container */
+  .docs-container {
+    padding: 0 16px;
+  }
+  .docs-container h3{
+      margin: 5px;
+  }
+
+  .docs-container p{
+    margin: 5px;
+}
+
+.docs-container  span {
+   color:$dark-blue;
+  }
+
+
+  
+  /* Clear floats */
+  .docs-container::after, .docs-row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  
+  
+  
+  .docs-button {
+    border: none;
+    outline: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color:$btn-blue;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .docs-button:hover {
+    background-color: $dark-blue;
+  }

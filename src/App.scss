@@ -1,8 +1,35 @@
+@import './index.scss';
 *,*::after, *::before{
     box-sizing: border-box;
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
 }
-
-
+.app{
+    position: relative;
+}
+.app_input{
+    background-color: #40404010;
+    padding: .8rem 1rem;
+    border: 1px solid #40404040;
+    font-size: 1.1rem;
+    outline: 1px solid #40404040;
+    transition: all 0.2s ease-in;
+    width: 100%;
+    
+}
+.app_input:focus{
+    outline: 1px solid #0d88e666;
+    border-color: #0d88e666;
+    background: #fff;
+}
+::placeholder{
+    color: #404040aa;
+}
+.app__checkbox{
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: $secondary-font;
+}

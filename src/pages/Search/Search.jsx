@@ -1,34 +1,57 @@
-import React from 'react';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import React, { useEffect, useState } from 'react';
+import {FaSearch} from 'react-icons/fa';
+import {CardDocs} from '../../components';
 
-const queryClient = new QueryClient();
+import axios from 'axios';
 
-const fetchDocs = async () => {
-    const res = await fetch('http://127.0.0.1:8000/api/doctors');
-    return res.json();
-}   
+import './search.scss'
 
 
+export default function Search() {
 
-const Search = () => {
-    const {data , status} = useQuery('doctors' , fetchDocs)
-    console.log(data)
+  const [data , setData] = useState([]);
+  const [query , setQuery] = useState("");
 
-    return (
-      <div>
-        hi
-      </div>
-    )
 
- 
+  useEffect(() => {
+    const fetchDocs = async () => {
+      const res = await axios.get("http://127.0.0.1:8000/api/doctors");
+      setData(res.data)
 }
+    fetchDocs();
+} , [])
 
-export default function wraped(){
+  
+console.log(data)
+  
   return (
-
-    <QueryClientProvider client={queryClient}  contextSharing={true}>
-      <Search />
-   </QueryClientProvider>
+    <div className='docs'>
+      <div className="docs-width">
+        <h1>Find <span>Doctor</span></h1>
+        <div className="docs-search-box">
+        <input className='docs-search-txt' type="text" placeholder='search...' onChange={(event) => setQuery(event.target.value)} />
+        <a  className='docs-search-btn' href="#">
+        <FaSearch></FaSearch>
+        </a>
+        </div>
      
-   )
+        <div className='docs-flex'>
+        {data.filter(val => {
+              if (query == "") 
+                return val
+              else if (val.fname.toLowerCase().includes(query.toLowerCase()) || val.lname.toLowerCase().includes(query.toLowerCase()) ) 
+                return val
+              }
+            )
+            .map(docs => 
+              <CardDocs key = {docs.id} docs = {docs} />
+            )}
+        </div>
+          
+          
+          
+           </div>
+         </div>
+      
+  )
 }

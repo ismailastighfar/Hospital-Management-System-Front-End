@@ -3,7 +3,7 @@ import './SecondaryButton.scss'
 function SecondaryButton(props) {
   return (
     <div className='secondary-button'>
-        <button>{ props.content }</button>
+        <button onClick={props.onClick}>{ props.content }</button>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import {motion} from 'framer-motion';
 import {useState , useEffect , useRef} from 'react';
 
 
-import './specialties.css'
+import './specialties.scss'
 
 
 export default function Specialties() {
@@ -13,14 +13,13 @@ export default function Specialties() {
   const [width , setWidth] = useState(0)
   const carousel = useRef()
   useEffect(() => {
-    console.log(carousel.current.scrollWidth , carousel.current.offsetWidth)
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
   }, [])
 
   return (
     <div className='specialty'>
       <div className="heading">
-      <h1> Our Consulting<span> Specialties</span> </h1>
+      <h1> Our Consulting<span> Specialties</span></h1>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
         Officiis laborum dolorem ab perferendis 
         explicabo quibusdam consectetur porro molestiae adipisci ullam.

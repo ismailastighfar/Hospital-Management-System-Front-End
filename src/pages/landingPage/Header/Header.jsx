@@ -23,9 +23,12 @@ function Header() {
                 <span>We Solve Problems </span>at Every Level of Treatment    
             </h1>
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum is simply dummy text of the printing anding industry, Lorem Ipsum is simply dummy
+            ypesetting industry, Lorem Ipsum is simply.
             </p>
-            <PrimaryButton content='make an Appointment' />
+            <div className="app__header-button" style={{ width: '50%'}}>
+                <PrimaryButton content='make an Appointment' />
+            </div>
         </motion.div>
         <motion.div
         initial={{
@@ -42,7 +45,7 @@ function Header() {
         className="app__header-img">
             <img src={doctor} alt="" />
             <motion.div
-            animate={{ y : [ 0, 50, 0 ] }}
+            animate={{ y : [ 0, 30, 0 ] }}
             transition={{ repeat: Infinity, duration: 2, type: 'tween' }}
             className="sheld">
                 <img src={sheld} alt="" />

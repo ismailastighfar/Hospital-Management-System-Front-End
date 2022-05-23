@@ -1,13 +1,9 @@
 @import '../../../index.scss';
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 
 .step{
    padding: 100px 0;
+   font-family: $secondary-font;
 }
 
 .max-width{
@@ -35,12 +31,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 5rem;
 }
 
 .card {
     padding: 50px 25px;
     width: calc(26% - 20px) ;
-    border-radius: 6px;
     border: 1px;
     background-color: white;
     text-align: center;
@@ -50,7 +46,7 @@
 }
 
 .card:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
     transform: translateY(-20px);
 }
 

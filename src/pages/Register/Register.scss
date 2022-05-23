@@ -1,0 +1,115 @@
+@import '../../index.scss';
+
+.app__register{
+    margin: 9rem 4rem 0 6rem;
+    display: flex;
+
+    height: max-content ;
+    @media screen and (max-width: 950px) {
+        flex-direction:  column-reverse;
+        margin: 2rem 4rem;
+    }
+    @media screen and (max-width: 650px) {
+        margin: 5rem 1rem 1rem;
+    }
+}
+.app__register.reverse{
+    flex-direction: row-reverse;
+    @media screen and (max-width: 950px) {
+        flex-direction:  column-reverse;
+    }
+    
+}
+.app__register-form{
+    flex: 1;
+   
+}
+.app__padding{
+    padding: 2rem 4rem;
+    @media screen and (max-width: 950px) {
+        padding: .5rem;
+    }
+    
+}
+.app__register-input{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem 0;
+    @media screen and (max-width: 950px) {
+        gap: 0.5rem;
+        
+    }
+}
+.app__register-input_header{
+    margin: 1rem 0;
+    font-family: $secondary-font;
+    font-size: 1.2rem;
+}
+
+
+.app__register-img{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: sticky;
+    top: 200px;
+    height: 100%;
+    img{
+        width: 90%;
+    }
+    h1{
+        font-family: $secondary-font;
+        color: $primary-color;
+        span{
+            color: $secondary-Color;
+        }
+    }
+    @media screen and (max-width: 950px) {
+        position: relative;
+        margin-bottom: 10rem;
+        text-align: center;
+    }
+}
+.app__register-avatars{
+    display: grid;
+    grid-template-columns: repeat( auto-fit , minmax(100px, 1fr)) ;
+    margin: 4rem 0;
+    gap: 1rem;
+    padding: 0 6rem;
+    label{
+        cursor: pointer;
+        position: relative;
+        input{
+            opacity: 1;
+            position: absolute;
+            z-index: -1;
+            width: 50%;
+            height: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &:checked::after{
+                content: '';
+                width: 200%;
+                height: 200%;
+                top: 10px   ;
+                transform: translate(-25% , -25%);
+                background-color: rgba(96, 180, 248, 0.911);
+                position: absolute;
+                z-index: -1;
+                border-radius: 12px;
+                
+            }
+        }
+        
+        img{
+        display: flex;
+        margin: auto;
+        width: 100px;
+
+    }
+    }
+    
+}

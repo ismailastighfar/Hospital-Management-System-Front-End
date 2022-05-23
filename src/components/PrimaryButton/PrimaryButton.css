@@ -6,7 +6,7 @@ a {
 }
 
 a:hover {
-  color: #0d88e6;
+  color: #0091ff;
 }
 
 .primary-button {
@@ -15,22 +15,18 @@ a:hover {
 
 .primary-button button {
   cursor: pointer;
-  background-color: #247BEA;
+  background-color: #247aea;
   font-family: "Ubuntu", "sans-serif";
   color: #fff;
-  padding: .6rem 2.5rem;
+  padding: .6rem 2rem;
   border: none;
-  border-radius: 6px;
-  -webkit-box-shadow: 10px 10px 20px rgba(122, 122, 122, 0.171);
-          box-shadow: 10px 10px 20px rgba(122, 122, 122, 0.171);
   font-size: 1rem;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
+  width: 100%;
 }
 
 .primary-button button:hover {
-  background-color: #0d88e6;
-  -webkit-box-shadow: 0px 10px 20px rgba(88, 88, 88, 0.363);
-          box-shadow: 0px 10px 20px rgba(88, 88, 88, 0.363);
+  background-color: #153572;
 }
 /*# sourceMappingURL=PrimaryButton.css.map */

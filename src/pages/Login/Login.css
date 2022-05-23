@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0091ff;
+}
+
+.app__login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem 6rem 0 6rem;
+}
+
+@media screen and (max-width: 950px) {
+  .app__login {
+    margin: 2rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__login {
+    margin: 1rem;
+  }
+}
+
+.app__login-info {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app__login-info h1 {
+  font-family: "Ubuntu", "sans-serif";
+  color: #26447B;
+}
+
+.app__login-info h1 span {
+  color: #FF8F3F;
+}
+
+.app__login-info img {
+  width: 80%;
+}
+
+@media screen and (max-width: 950px) {
+  .app__login-info {
+    margin: 4rem 0;
+  }
+  .app__login-info img {
+    width: 100%;
+  }
+}
+
+.app__login-down-icon {
+  font-size: 40px;
+  margin: 2rem 0 0 0;
+  display: none;
+  color: #FF8F3F;
+}
+
+@media screen and (max-width: 950px) {
+  .app__login-down-icon {
+    display: block;
+  }
+}
+
+.app__login-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 4rem 0;
+  border-radius: 12px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  text-align: start;
+  padding: 5rem 2rem 1rem 2rem;
+  width: 440px;
+}
+
+.app__login-wrapper form {
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5em;
+}
+
+.app__login-wrapper a {
+  font-family: "Ubuntu", "sans-serif";
+  color: #0091ff;
+}
+
+@media screen and (max-width: 950px) {
+  .app__login-wrapper {
+    margin: 0;
+    padding-top: 0;
+  }
+}
+
+.app__login-from-input {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app__login-from-input label {
+  cursor: pointer;
+  padding: .8rem 1rem;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #40404040;
+  border-right: none;
+  background: transparent;
+  outline: 1px solid #40404040;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.app__login-from-input label svg {
+  font-size: 1.1rem;
+  color: #757678;
+}
+
+.app__login-buttons {
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+/*# sourceMappingURL=Login.css.map */

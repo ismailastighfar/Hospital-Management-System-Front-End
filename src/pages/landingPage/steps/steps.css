@@ -6,18 +6,12 @@ a {
 }
 
 a:hover {
-  color: #0d88e6;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  color: #0091ff;
 }
 
 .step {
   padding: 100px 0;
+  font-family: "Ubuntu", "sans-serif";
 }
 
 .max-width {
@@ -50,12 +44,12 @@ a:hover {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 5rem;
 }
 
 .card {
   padding: 50px 25px;
   width: calc(26% - 20px);
-  border-radius: 6px;
   border: 1px;
   background-color: white;
   text-align: center;
@@ -69,8 +63,8 @@ a:hover {
 }
 
 .card:hover {
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
+          box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
 }

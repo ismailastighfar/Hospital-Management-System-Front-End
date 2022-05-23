@@ -1,1 +1,103 @@
-/* No CSS *//*# sourceMappingURL=search.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0091ff;
+}
+
+.docs {
+  padding: 100px 0;
+  font-family: "Ubuntu", "sans-serif";
+  margin-top: 70px;
+}
+
+.docs-width {
+  max-width: 1300px;
+  padding: 0 45px;
+}
+
+.docs-flex {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+.docs-width h1 {
+  text-align: center;
+  position: relative;
+  color: #26447B;
+  font-size: 30px;
+  font-family: "Ubuntu", "sans-serif";
+  font-weight: 500;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+}
+
+.docs-width h1 span {
+  color: #FF8F3F;
+}
+
+.docs-search-box {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #26447B;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+
+.docs-search-box:hover > .docs-search-txt {
+  width: 240px;
+  padding: 0 5px;
+}
+
+.docs-search-btn {
+  color: #FF8F3F;
+  float: right;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #26447B;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.docs-search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  -webkit-transition: 0.4;
+  transition: 0.4;
+  line-height: 20px;
+  width: 0px;
+}
+
+@media screen and (max-width: 1190px) {
+  .docs-width {
+    padding: 0 25px;
+  }
+}
+/*# sourceMappingURL=search.css.map */

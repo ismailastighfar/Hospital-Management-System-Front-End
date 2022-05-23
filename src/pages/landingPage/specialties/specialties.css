@@ -6,12 +6,23 @@ a {
 }
 
 a:hover {
-  color: #0d88e6;
+  color: #0091ff;
 }
 
 .specialty {
-  padding: 5px 40px;
-  margin: 5px;
+  margin: 2rem 6rem;
+}
+
+@media screen and (max-width: 950px) {
+  .specialty {
+    margin: 1rem 4rem;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .specialty {
+    margin: 1rem;
+  }
 }
 
 .carousel {
@@ -54,6 +65,7 @@ a:hover {
 }
 
 .heading p {
+  font-family: "Ubuntu", "sans-serif";
   color: #757678;
   font-weight: 500;
   font-size: 18px;

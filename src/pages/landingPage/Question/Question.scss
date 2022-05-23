@@ -1,24 +1,46 @@
 @import '../../../index.scss';
 
 .app__question{
-    margin: 4rem 0;
-    padding: 0 6rem ;
+    margin: 6rem 0;
+    padding: 0 4rem;
     overflow: hidden;
     position: relative;
-    height: 400px;
-    background-image: linear-gradient(to left , #ff8f3fbf , transparent);
+    background-image: linear-gradient(to left , #ff8f3fbf , #ffffff30);
     display: flex;
+    height: 400px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
+    p{
+        font-family: $secondary-font;
+        font-size: 1.3rem;
+        color: white;
+        width: 50%;
+        margin: 2rem 0;
+    }
     img{
         position: absolute;
         object-fit: cover;
         width: 100%;
         z-index: -1;
+        @media screen and (max-width: 650px) {
+            width: 130%;
+        }
     }
 }
 .app__question-head{
     color: $primary-color;
     font-family: $secondary-font;
+}
+.app__question-input{
+    position: relative;
+    width: 70%;
+    svg{
+        position: absolute;
+        right: 1rem;
+        bottom: 2.8rem;
+        font-size: 1.5rem;
+        color: $secondary-Color;
+    }
 }
