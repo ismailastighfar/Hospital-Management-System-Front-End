@@ -3,8 +3,7 @@
 .app__register{
     margin: 9rem 4rem 0 6rem;
     display: flex;
-
-    height: max-content ;
+    min-height: max-content ;
     @media screen and (max-width: 950px) {
         flex-direction:  column-reverse;
         margin: 2rem 4rem;
@@ -21,15 +20,17 @@
     
 }
 .app__register-form{
+    margin-bottom: 2rem;
     flex: 1;
-   
+    position: relative;
+    padding: 0 2rem;
 }
 .app__padding{
     padding: 2rem 4rem;
     @media screen and (max-width: 950px) {
         padding: .5rem;
     }
-    
+
 }
 .app__register-input{
     display: flex;
@@ -38,13 +39,12 @@
     margin: 1rem 0;
     @media screen and (max-width: 950px) {
         gap: 0.5rem;
-        
     }
 }
 .app__register-input_header{
     margin: 1rem 0;
     font-family: $secondary-font;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 
@@ -68,16 +68,18 @@
     }
     @media screen and (max-width: 950px) {
         position: relative;
-        margin-bottom: 10rem;
+        margin-bottom: 4rem;
         text-align: center;
+        height: max-content;
+        top:0;
     }
 }
 .app__register-avatars{
     display: grid;
     grid-template-columns: repeat( auto-fit , minmax(100px, 1fr)) ;
     margin: 4rem 0;
-    gap: 1rem;
-    padding: 0 6rem;
+    gap: 2rem;
+    padding: 0 3rem;
     label{
         cursor: pointer;
         position: relative;

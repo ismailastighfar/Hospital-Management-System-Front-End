@@ -38,6 +38,15 @@
         }
     }
 }
+.errorBar{
+    background-color: rgba(232, 82, 82, 0.21);
+    border: 1px solid rgba(255, 0, 0, 0.816);
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-family: $secondary-font;
+    color: $gray-text;
+}
 .app__login-down-icon{
     font-size: 40px;
     margin: 2rem 0 0 0 ;
@@ -51,10 +60,10 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    margin: 4rem 0;
+    margin: 2rem 0;
     border-radius: 12px;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     text-align: start;
     padding: 5rem 2rem 1rem 2rem;
     width: 440px;
