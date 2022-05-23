@@ -16,7 +16,16 @@
     outline: 1px solid #40404040;
     transition: all 0.2s ease-in;
     width: 100%;
+}
+.app_input.input_error{
+    border: 2px solid #ff000065;
     
+}
+.p_error{
+    color: #e91515fc;
+    font-family: $secondary-font;
+    font-size: 18px;
+    margin: 1rem 0 0 0;
 }
 .app_input:focus{
     outline: 1px solid #0d88e666;
@@ -32,4 +41,11 @@
     align-items: center;
     gap: 1rem;
     font-family: $secondary-font;
+}
+.d_flex{
+    display: flex;
+}
+.flex_center{
+    justify-content: center;
+    align-items: center;
 }

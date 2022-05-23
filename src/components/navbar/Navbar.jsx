@@ -1,20 +1,41 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import { RiMenu3Line , RiCloseLine} from 'react-icons/ri';
-import { useState } from 'react';
 import { PrimaryButton, SecondaryButton } from '../';
 import { Link, useNavigate } from "react-router-dom";
 import './navbar.scss'
 
-export default function Navbar() {
-  const [toggleMenu , setToggleMenu] = useState(false)
 
+export default function Navbar() {
+
+  // const auth = useContext(AuthContextProvider)
+
+  const [toggleMenu , setToggleMenu] = useState()
+  const authToken = localStorage.getItem('token')
+  const [auth, setauth] = useState(false)
+  useEffect(() => {
+    if(  authToken != null){
+      setauth(true)
+      return
+    }
+    setauth(false)
+  }, [])
+  
+  // console.log(auth)
+  const showMenu = () =>{
+    setToggleMenu(true)
+  }
+  const hideMenu = () =>{
+    setToggleMenu(false)
+  }
   let navigat = useNavigate();
+  
   const handleLoginButton = () => {
+    setToggleMenu(false)
     navigat("/login")
   }
   const handleRegisterButton = () =>{
-    console.log('nice');
+    setToggleMenu(false)
     navigat("/register")
   }
   return (
@@ -30,15 +51,27 @@ export default function Navbar() {
        </div>
         </div>
         
+        
+        { 
+        !auth && (
         <div className="navbar-sign">
-          <PrimaryButton content="sign in" onClick={handleLoginButton}/> 
+          <PrimaryButton content="sign in" onClick={handleLoginButton}/>
           <SecondaryButton content="sign up" onClick={handleRegisterButton}/>
         </div>
+        )
+        }
+        {
+        auth && (
+          <p>{localStorage.getItem('fullname')}</p>
+        )
+        }
+        
         <div className="navbar-menu-button">
-          {toggleMenu
+          {
+          toggleMenu
 
-          ? <RiCloseLine color="#247BEA" size={27} onClick ={() => setToggleMenu(false)} />
-          : <RiMenu3Line color="#247BEA" size={27} onClick ={() => setToggleMenu(true)} />
+          ? <RiCloseLine color="#247BEA" size={27} onClick={hideMenu} />
+          : <RiMenu3Line color="#247BEA" size={27} onClick={showMenu} />
           
           }
         </div>
@@ -59,13 +92,26 @@ export default function Navbar() {
             }}
             className='navbar-menu-container'>
                 <div className='navbar-menu-container-links'>  
-                  <motion.div to="/" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.1, duration: .6}} onClick={ () => setToggleMenu(false)}  ><Link to='/'>Home</Link> </motion.div>
-                  <motion.div to="/login" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.2, duration: .6}} onClick={ () => setToggleMenu(false)}  ><Link to='/'>find a doctor</Link> </motion.div>
+                  <motion.div to="/" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.1, duration: .6}} onClick={ hideMenu }  ><Link to='/'>Home</Link> </motion.div>
+                  <motion.div to="/login" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.2, duration: .6}} onClick={ hideMenu }  ><Link to='/'>find a doctor</Link> </motion.div>
                 </div>
-                <div className="navbar-menu-sign">
-                  <PrimaryButton content="sign in"/>
-                  <SecondaryButton content="sign up"/>
-                </div>
+
+                
+                  { !auth && (
+
+                    <div className="navbar-menu-sign">
+                      <PrimaryButton content="sign in" onClick={handleLoginButton}/>
+                      <SecondaryButton content="sign up" onClick={handleRegisterButton}/>
+                    </div>
+                  )
+                  }
+                  {
+                    auth && (
+                      <p>{localStorage.getItem('fullname')}</p>
+                    )
+                  }
+                   
+                
             </motion.div>
           )}
           
