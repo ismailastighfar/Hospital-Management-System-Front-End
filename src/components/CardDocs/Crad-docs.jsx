@@ -1,27 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import image from '../../assets/doctor.jpg';
-
-import './card-docs.css'
-
-export default function Card({docs}) {
-
-  
+import { PrimaryButton, SecondaryButton } from '../';
+import './card-docs.scss'
+import axios from 'axios';
+import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router';
+export default function Card({docs}) { 
+  const [specialty, setspecialty] = useState('')
+  const navigate = useNavigate();
+  useEffect(() => {
+    axios.get(`http://127.0.0.1:8000/api/specialties/${docs.id}`).then((res) => {
+      setspecialty(res.data.name)
+    })
+  }, [])
+  const handleAppointementButton = () =>{
+    navigate(`/Appointement/create/${docs.id}`)
+  }
   return (
       
-         <div className="docs-row">
-            <div className='docs-column'>
-            <div className='docs-card' >
-            <img src={image} alt="img"/>
-            <div className="docs-container">
-              <h3> <span>Name</span>  : {docs.fname} {docs.lname} </h3>
-              <p> <span>Description</span>  : {docs.description}</p>
-              <p> <span>Specialty</span>  : {docs.name}</p>
-              <button class="docs-button">Book Appointment</button>
-            </div>
-         </div>
-         </div>
+         <motion.div
+         initial={{ 
+           y: 200,
+           opacity: 0
+           }}
+         whileInView={{
+           y: 0,
+           opacity:1
+         }}
+         transition={{
+           duration: .3
+         }}
+         className="app__doctor-card">
+        
+              <div className="app__doctor-card_container">
+                <img src={image} alt="img"/>
+                <h3> {docs.fname} {docs.lname} </h3>
+                <p> {docs.description}</p>
+                <h4> {specialty}</h4>
+                </div>
+                <div className="app__doctor-card_button">
+                  <PrimaryButton content='Book Now' onClick={handleAppointementButton} />
+                  <SecondaryButton content='More info' style={{margin:'0'}}/>
+                </div>
+                
          
-       </div>
+       </motion.div>
      
 
   )

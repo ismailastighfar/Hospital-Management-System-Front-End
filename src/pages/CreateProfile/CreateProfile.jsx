@@ -3,19 +3,25 @@ import React, {useState, useEffect} from 'react'
 import { PrimaryButton } from '../../components'
 import { register2 } from '../../assets'
 import axios from 'axios'
+import { useNavigate } from 'react-router'
 
 function CreateProfile() {
+    const nav = useNavigate()
+    const [isload, setisload] = useState(false)
     const [avatars, setavatars] = useState([])
+    let user =  JSON.parse(localStorage.getItem('currentUser'))
+    const token = user.token
     const [ profil, setprofil ] = useState({
         fullname: '',
-        age: '',
+        age: 0,
         phone:'',
         cne:'',
         dateOfBirth: '',
         avatar:'',
         user_id: '',
         allergies: '',
-        sikness: ''
+        sikness: '',
+        user_id : user.userDetails.user_id
     });
     const [form, setform] = useState({
         fname: '',
@@ -35,38 +41,62 @@ function CreateProfile() {
     }, [])
     const HandelChange = (e) => {
         const value = e.target.value
-        setform({ ...form , [ e.target.name]: value  })  
+        setform(() => { return { ...form , [ e.target.name]: value  } }) 
     }
-    const handelSubmit = (e) =>{
-        e.preventDefault();  
-        let birthDateFormated = new Date(form.day +'-' +form.month +'-'+form.year)
-        let Today = new Date()
-        let age = Today.getFullYear() - birthDateFormated.getFullYear()
+    useEffect(() => {
+      
+      let birthDateFormated = new Date(form.month +'-' + form.day + '-' + form.year)
+      let Today = new Date()
+      let age = Today.getFullYear() - birthDateFormated.getFullYear()
+      
+      setprofil({ 
+          fullname: form.lname + ' ' + form.fname,
+          age: age,
+          phone: form.phone,
+          cne: form.cne,
+          dateOfBirth: form.year + '-' + form.month + '-'+ form.day,
+          avatar: form.avatar,
+          allergies: form.allergies,
+          sickness: form.sickness,
+          user_id: profil.user_id
+      }
+      );
+      console.log(profil)
+    }, [form])
+    
+    async function handelSubmit(e){
+      
+      e.preventDefault(); 
+      setisload(true) 
+      console.log(profil)
+      
+      let data = JSON.stringify(profil);
+      
+      axios.defaults.withCredentials = true;
+      axios.get('http://localhost:8000/sanctum/csrf-cookie').then(() => {
 
-        const formToProfile = {
-            fullname: form.lname + ' ' + form.fname,
-            age: age,
-            phone: form.phone,
-            cne: form.cne,
-            dateOfBirth: form.year + '-' + form.month + '-'+ form.day,
-            avatar: form.avatar,
-            user_id: localStorage.getItem('user'),
-            allergies: form.allergies,
-            sickness: form.sickness
-        }   
-        setprofil(formToProfile);
-        let data = JSON.stringify(profil);
-        axios.defaults.withCredentials = true;
-        const token = localStorage.getItem('token')
-        axios.get('http://localhost:8000/sanctum/csrf-cookie').then(() => {
+          axios.post('http://localhost:8000/api/patients', data, { headers :{
+              Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json'
+          }}).then((res) => {
+            console.log(res.data)
+            
+            let patient =  res.data.patient
+            user = { ...user, userDetails: { ...user.userDetails, patient: patient}}
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            setisload(false)
+            nav('/profile')
+          }
+            ).catch( error => {
+            setisload(false)
+            console.log(error)
+          })
 
-            axios.post('http://localhost:8000/api/patients', data, { headers :{
-                Authorization: `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            }}).then((res) => console.log(res) ).catch( error => console.log(error.response.data))
-
-        })
-    }
+      })
+  }
+    
+    
+    
 
         
   return (
@@ -127,8 +157,7 @@ function CreateProfile() {
           <div className="app__checkbox">
             <input type="checkbox" name="accepte condition" id="chckebox" required/> <label htmlFor="">accept our condition</label> 
           </div>
-          <PrimaryButton content='Create Account'/>
-
+          <PrimaryButton content='Create Account' />
         </motion.form>
 
         <motion.div  initial={{  opacity: 0 }} whileInView={{  opacity: 1}}  transition={{ duration: 0.8 }} className="app__register-img">

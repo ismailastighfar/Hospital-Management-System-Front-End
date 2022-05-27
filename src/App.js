@@ -1,51 +1,68 @@
-
 import './App.scss';
 
 import Login from './pages/Login/Login'
 import LandingPage from './pages/landingPage/LandingPage';
 import Layout from './pages/Layout/Layout';
 import Register from './pages/Register/Register';
-<<<<<<< HEAD
 import Search from './pages/Search/Search';
 import Drugs from './pages/Drugs/Drugs';
-
-
-=======
-import CreateProfile from './pages/CreateProfile/CreateProfile';
->>>>>>> e060f1c9fad19561dd9a3aa21713f819893741b2
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Profile from './pages/Profile/Profile';
+import CreateProfile from './pages/CreateProfile/CreateProfile'
+import CreateAppointement from './pages/CreateAppointement/CreateAppointement' 
+import  Questions  from './pages/Questions/Questions';
+import { Navigate, BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react';
 
+import { AuthProviderContext } from './components/AuthContext';
+import { ImPhone } from 'react-icons/im';
 
 function App() {
+  const PrivateRoutes = [
+    {
+      path: 'profile/create',
+      isPrivate: true,
+      element: <CreateProfile />
+    },
+    {
+      path: 'appointement/create',
+      isPrivate: true,
+      element: ''
+    },
+    {
+      path: 'profile',
+      isPrivate: true,
+      element: <Profile />
+    }
+  ]
   return (
-    
-      <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-          <Route index element={<LandingPage />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-<<<<<<< HEAD
-          <Route path="search" element={<Search />} />
-          <Route path="drugs" element={<Drugs />} />
+    <div className="App">
+      <AuthProviderContext>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+            <Route index element={<LandingPage />} />
+            
+            <Route path="doctor/search" element={<Search />} />
+            <Route path="drugs" element={<Drugs />} />
+            <Route path="Questions" element={<Questions />} />
+            <Route path="Appointement/create/:id" element={<CreateAppointement />} />
+            <Route
+            path='profile'
+            element={ 
+              !Boolean(localStorage.getItem('currentUser')) ? ( <Navigate  replace to="/login" /> ) : ( <Profile /> )
+            }
+            />
+            </Route>
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
+            <Route path="profile/create" element={<CreateProfile />} ></Route>
 
-        </Route>
-        </Routes>
-      </BrowserRouter>
-    
+          </Routes>
+        </BrowserRouter>
+      </AuthProviderContext>
     </div>
   )
 
-=======
-          <Route path="CreateProfile" element={<CreateProfile />} />
-        </Route>
-        </Routes>
-      </BrowserRouter>
-      </div>
-  );
->>>>>>> e060f1c9fad19561dd9a3aa21713f819893741b2
 }
 
 export default App;

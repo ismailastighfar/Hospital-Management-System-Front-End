@@ -11,7 +11,7 @@ function Register() {
   const [usernameError, setusernameError] = useState('')
   const [emailError, setemailError] = useState('')
   const [passwordError, setpasswordError] = useState([])
-  const [ form1, setform1] = useState({
+  const [form1, setform1] = useState({
     username: '', 
     email: '',
     password: '',
@@ -19,7 +19,6 @@ function Register() {
     password_confirmation: '',
     role: '1'
   });
-  
   const handelChangesForm1 = (e) => {
 
     const value = e.target.value
@@ -33,16 +32,25 @@ function Register() {
     e.preventDefault()
     setisload(true)
     const data = JSON.stringify(form1);
+
     axios.defaults.withCredentials = true;
-    axios.get('http://localhost:8000/sanctum/csrf-cookie' ).then( () => {
+      axios.get('http://localhost:8000/sanctum/csrf-cookie' ).then( () => {
       axios.post('http://localhost:8000/api/users', data , { 
         headers:{ 
           'Content-Type': 'application/json; multipart/form-data',
         } 
       }).then( (res) => {
-        localStorage.setItem('user', res.data.user.user.id)
-        localStorage.setItem('token', res.data.user.token)
-        nav('/CreateProfile')
+        console.log(res.data)
+        let  currentUser = JSON.stringify ({ 
+          userDetails: { 
+            user_id: res.data.user.user.id,
+            username: res.data.user.user.username, },
+          token: res.data.user.token
+        })
+        localStorage.setItem('currentUser', currentUser )
+        setisload(false)
+        nav('/profile/create')
+
     }).catch( error => {
       if(error.response.data.errors.username){
         error.response.data.errors.username.forEach(element => {
@@ -69,7 +77,7 @@ function Register() {
       <div className="app__register-form app__padding" >
           <motion.form initial={{ y: 100 , opacity: 0 }} whileInView={{ y: 0, opacity: 1 }}  transition={{ duration: .5}} onSubmit={handelFirstFrom}>
             <div className="app__register-input_header">username</div>
-            <input type="text" className={usernameError ? 'app_input input_error' : 'app_input'} name='username' placeholder='username' onChange={handelChangesForm1} required/>
+            <input type="text" className={usernameError ? 'app_input input_error' : 'app_input'} name='username' placeholder='username' value={form1.username} onChange={handelChangesForm1} required/>
             <p className='p_error'>{usernameError}</p>
             <div className="app__register-input_header">Email</div>
             <input type="email" className={emailError ? 'app_input input_error' : 'app_input'}  name='email' placeholder='exemple@gmail.com' onChange={handelChangesForm1} required/>
@@ -86,7 +94,7 @@ function Register() {
               <option value="female" >female</option>
             </select>
             <div className="primary-button " style={{ width: '40%', padding: '2rem 0'}} >
-                  <button type='submit'  disabled= { isload ? true : false  }> { isload && ('loading...') } { !isload && ( 'Suivant' ) }  </button>
+                    <button type='submit'  disabled= { isload ? true : false  }> { isload && ('loading...') } { !isload && ( 'Suivant' ) }  </button>
             </div>  
           </motion.form>
       </div>

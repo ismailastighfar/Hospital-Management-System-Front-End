@@ -4,24 +4,18 @@ import { RiMenu3Line , RiCloseLine} from 'react-icons/ri';
 import { PrimaryButton, SecondaryButton } from '../';
 import { Link, useNavigate } from "react-router-dom";
 import './navbar.scss'
-
-
+import ProfileBar from '../ProfileBar/ProfileBar';
+import { useAuthDispatch, useAuthState } from '../../components/AuthContext'
+import { logout } from '../../components/action'
 export default function Navbar() {
 
   // const auth = useContext(AuthContextProvider)
 
   const [toggleMenu , setToggleMenu] = useState()
-  const authToken = localStorage.getItem('token')
-  const [auth, setauth] = useState(false)
-  useEffect(() => {
-    if(  authToken != null){
-      setauth(true)
-      return
-    }
-    setauth(false)
-  }, [])
-  
-  // console.log(auth)
+
+  const dispatch = useAuthDispatch()
+  const user = useAuthState()
+
   const showMenu = () =>{
     setToggleMenu(true)
   }
@@ -39,30 +33,32 @@ export default function Navbar() {
     navigat("/register")
   }
   return (
-    <div className='navbar'>
+      <div className='navbar'>
       <div className='navbar-links'>
        <div className='navbar-links-logo'>
          <p>Midi<span>Aid</span></p>
        </div>
        <div className='navbar-links-container'>
         <Link to="/">Home</Link>
-        <Link to="/login">Find a Doctor</Link>
+        <Link to="/doctor/search">Find a Doctor</Link>
 
        </div>
         </div>
         
         
         { 
-        !auth && (
+        !user.userDetails && (
         <div className="navbar-sign">
           <PrimaryButton content="sign in" onClick={handleLoginButton}/>
           <SecondaryButton content="sign up" onClick={handleRegisterButton}/>
         </div>
         )
         }
-        {
-        auth && (
-          <p>{localStorage.getItem('fullname')}</p>
+         { 
+        user.userDetails && (
+          <div className="navbar-sign">
+            <ProfileBar user={user.userDetails} />
+          </div>
         )
         }
         
@@ -97,7 +93,7 @@ export default function Navbar() {
                 </div>
 
                 
-                  { !auth && (
+                  { !user && (
 
                     <div className="navbar-menu-sign">
                       <PrimaryButton content="sign in" onClick={handleLoginButton}/>
@@ -106,7 +102,7 @@ export default function Navbar() {
                   )
                   }
                   {
-                    auth && (
+                    user && (
                       <p>{localStorage.getItem('fullname')}</p>
                     )
                   }
