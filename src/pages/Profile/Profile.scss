@@ -1,9 +1,11 @@
+@import '../../index.scss';
 .app__profile{
     margin: 7rem 6rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 2rem;
+    font-family: $secondary-font;
 }
 .app__profile-info{
     flex: 1;
@@ -11,15 +13,17 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    .app__profile-info_img{
-        img{
-            width: 200px;
-        }
-    }
-    .app__profile-info_details{
-        width: 100%;
+    padding: 2rem 4rem;
+    row-gap: 4rem;
+}
+.app__profile-info_img{
+    img{
+        width: 200px;
     }
 }
+.app__profile-info_details{
+
+}
 .app__profile-services{
-    flex: 1;
+    flex: 2;
 }
