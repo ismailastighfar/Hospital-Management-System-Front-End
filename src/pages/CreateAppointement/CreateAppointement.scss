@@ -1,0 +1,12 @@
+@import '../../App.scss';
+.app__CreateAppointement{
+    margin: 7rem 6rem;
+}
+.app__CreateAppointement-form{
+    width: 50%;
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

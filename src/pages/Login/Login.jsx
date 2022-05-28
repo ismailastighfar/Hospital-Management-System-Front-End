@@ -1,5 +1,5 @@
-import axios, { Axios } from 'axios';
-import React, { useState } from 'react'
+
+import React, { useState, useContext } from 'react'
 import {  SecondaryButton } from '../../components'
 import { FiMail, FiAtSign } from 'react-icons/fi';
 import { IoMdArrowDropdown } from 'react-icons/io'
@@ -8,42 +8,28 @@ import './Login.scss';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-function Login() {
+import { loginUser, logout } from '../../components/action';
+import { useAuthDispatch, useAuthState } from '../../components/AuthContext';
 
+function Login() {
+  const dispatch = useAuthDispatch()
+  const user = useAuthState()
   const navigate = useNavigate()
-  const [isload, setisload] = useState(false)
   const [email, setemail] = useState('')
   const [password, setpassword] = useState('')
-  const [loginError, setloginError] = useState('')
-  async function  handleSubmit(e){
+  async function  handleSubmit(e) {
     e.preventDefault()
-    setisload(true)
-    axios.defaults.withCredentials = true;
-    const data = JSON.stringify({ email: email, password: password })
-    axios.get('http://localhost:8000/sanctum/csrf-cookie').then(() =>
-        {
-          
-          axios.post('http://localhost:8000/api/patient/login', data, {
-            headers:{
-              'Content-Type': 'application/json'
-            }
-          } ).then( res => {
-            console.log(res.data)
-            localStorage.setItem('token', res.data.token)
-            localStorage.setItem('fullname', res.data.patient.patient.fullname )
-            localStorage.setItem('avatar', res.data.patient.patient.avatar )
-            localStorage.setItem('user', res.data.patient.patient.user_id )
-            // navigate()
-          } ).catch((error) => {
-            if(error.response.data.message){
-              setloginError(error.response.data.message)
-              setisload(false)
-            }
-          })
-        }
-    );
-
-    
+    let credits = {
+      email: email,
+      password: password
+    }
+    loginUser(dispatch, credits).then((response) => { 
+      if(response.userDetails){
+        setTimeout(navigate('/profile'), 1000) 
+        return
+      }
+      return
+    })
 
   }
   return (
@@ -53,13 +39,15 @@ function Login() {
         <div className='navbar-links-logo' style={{ textAlign: 'center'}} >
             <p style={{ fontSize: '4rem' }}>Midi<span>Aid</span></p>
         </div>
-        {
-          loginError && (
-          <div className="errorBar">
-            { loginError }
-          </div>
-          )
-        }
+        
+         {
+           (user.errorMessage && !user.loading) && (
+                <div className="errorBar">{ user.errorMessage }</div>
+           )
+              
+           
+         }
+        
         <motion.form
         initial={{ y: 100, opacity: 0}}
         whileInView={{ y: 0, opacity: 1 }}
@@ -81,7 +69,7 @@ function Login() {
           <div className="app__login-button">
            
             <div className="primary-button" style={{ width: '100%'}}>
-              <button type='submit'  disabled= { isload ? true : false  }> { isload && ('loading...') } { !isload && ( 'Login' ) }  </button>
+            <button type='submit' disabled={ user.loading ? true : false}  > { user.loading ? 'Loading' : 'login'}</button>
             </div>
             
             <SecondaryButton content='create a new account' onClick={ () => navigate('/register')} />

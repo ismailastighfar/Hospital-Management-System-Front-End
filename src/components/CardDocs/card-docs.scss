@@ -1,74 +1,48 @@
 @import '../../index.scss';
-
-.docs-card img{
-    width: 100%;
+.app__doctor-card{
+  min-width: 400px;
+  width: min-content;
+  padding: 2rem;
+  display: flex ;
+  flex-direction: column;
+  margin: 2rem 0 0 0;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
 }
-
-
-
-/* Three columns side by side */
-.docs-column {
-    float: left;
-    width: 100%;
-    margin-bottom: 16px;
-    padding: 0 8px;
-  }
+.app__doctor-card_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  position: relative;
   
-  /* Display the columns below each other instead of side by side on small screens */
-  @media screen and (max-width: 650px) {
-    .docs-column {
-      width: 100%;
-      display: block;
+  &:hover img{
+      transform: translateY(-2rem) scale(1.2);
     }
+  img{
+    width: 260px;
+    height: 260px;
+    border-radius: 7px;
+    top: -15px;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
+    transition: all 0.4s ease-in-out;
+    
   }
-  
-  /* Add some shadows to create a card effect */
-  .docs-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  h3{
+    font-size: 1.4rem;
   }
-  
-  /* Some left and right padding inside the container */
-  .docs-container {
-    padding: 0 16px;
-  }
-  .docs-container h3{
-      margin: 5px;
-  }
-
-  .docs-container p{
-    margin: 5px;
-}
-
-.docs-container  span {
-   color:$dark-blue;
-  }
-
-
-  
-  /* Clear floats */
-  .docs-container::after, .docs-row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-
-  
-  
-  
-  .docs-button {
-    border: none;
-    outline: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color:$btn-blue;
+  p{
+    text-align: justify;
     text-align: center;
-    cursor: pointer;
-    width: 100%;
+    padding: 1rem 0;
   }
-  
-  .docs-button:hover {
-    background-color: $dark-blue;
+  h4{
+    background: #3fa6ffc7;
+    color: #fff;
+    border-radius: 7px;
+    font-size: 0.7rem;
+    padding: 10px;
   }
+}

@@ -3,7 +3,7 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     margin: 0;
     padding: 0.5rem 6rem;
     position: fixed;
@@ -17,6 +17,7 @@
     }
     @media screen and (max-width: 650px) {
         padding: 0 1rem;
+        align-items: baseline;
     }
 }
 
@@ -53,7 +54,7 @@
 
 .navbar-sign{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end;  
     gap: 1rem;
     align-items: center;
     margin-left: 1rem;
