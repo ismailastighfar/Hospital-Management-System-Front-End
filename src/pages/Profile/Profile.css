@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0091ff;
+}
+
+.app__profile {
+  margin: 7rem 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2rem;
+  font-family: "Ubuntu", "sans-serif";
+}
+
+.app__profile-info {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 2rem 4rem;
+  row-gap: 4rem;
+}
+
+.app__profile-info_img img {
+  width: 200px;
+}
+
+.app__profile-services {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+/*# sourceMappingURL=Profile.css.map */

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 import './search.scss'
 
-
+                         
 export default function Search() {
   const [specialities, setspecialities] = useState([])
   const [data , setData] = useState([]);
@@ -65,7 +65,7 @@ export default function Search() {
         <div className='app__doctors-items'>
         {
           isload && (
-            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>  
+            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>  
           )
         }
         { !isload &&

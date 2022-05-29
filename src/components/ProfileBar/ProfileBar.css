@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0091ff;
+}
+
+.app__profilBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Ubuntu", "sans-serif";
+  padding: 0 2rem;
+  gap: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.app__profilBar-img {
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  width: 40px;
+  height: 40px;
+}
+
+.app__profilBar-img:hover {
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.app__profileBar-container.active {
+  z-index: 100;
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.app__profileBar-container {
+  z-index: -1;
+  opacity: 0;
+  position: absolute;
+  padding: 1rem 0;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  top: 180%;
+  right: 2rem;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #40404040;
+  -webkit-transform: translateX(120px);
+          transform: translateX(120px);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.app__profileBar-container img {
+  width: 90px;
+  height: 90px;
+}
+
+.app__profileBar-container h2 {
+  color: #000;
+  margin: 2rem 0 0 0;
+}
+
+.app__profileBar-container h3 {
+  color: #757678;
+  margin: 5px 0 2rem 0;
+}
+/*# sourceMappingURL=ProfileBar.css.map */

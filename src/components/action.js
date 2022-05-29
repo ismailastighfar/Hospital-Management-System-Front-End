@@ -1,6 +1,6 @@
 const ROOT_URL = 'http://localhost:8000';
 import axios from "axios";
-import useState from 'react'
+
 axios.defaults.withCredentials = true
 
 export async function loginUser(dispatch, loginPayload) {

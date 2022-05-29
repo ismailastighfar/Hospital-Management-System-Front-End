@@ -43,6 +43,7 @@ a:hover {
       -ms-flex-pack: justify;
           justify-content: space-between;
   pointer-events: none;
+  font-family: "Ubuntu", "sans-serif";
 }
 
 .heading {

@@ -1,0 +1,10 @@
+.doc-grid-conatiner{
+    display:grid;
+    grid-template-columns:auto auto auto;
+    gap:10px;
+    padding: 10px;
+}
+
+.doc-grid-img img{
+    width: 100%;
+}

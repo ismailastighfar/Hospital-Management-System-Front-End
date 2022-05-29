@@ -10,13 +10,13 @@ a:hover {
 }
 
 .app__register {
-  margin: 9rem 4rem 0 6rem;
+  margin: 4rem 4rem 0 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
 }
 
 @media screen and (max-width: 950px) {
@@ -52,9 +52,12 @@ a:hover {
 }
 
 .app__register-form {
+  margin-bottom: 2rem;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  position: relative;
+  padding: 0 2rem;
 }
 
 .app__padding {
@@ -87,7 +90,7 @@ a:hover {
 .app__register-input_header {
   margin: 1rem 0;
   font-family: "Ubuntu", "sans-serif";
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .app__register-img {
@@ -126,8 +129,12 @@ a:hover {
 @media screen and (max-width: 950px) {
   .app__register-img {
     position: relative;
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
     text-align: center;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    top: 0;
   }
 }
 
@@ -137,8 +144,8 @@ a:hover {
   -ms-grid-columns: (minmax(100px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   margin: 4rem 0;
-  gap: 1rem;
-  padding: 0 6rem;
+  gap: 2rem;
+  padding: 0 3rem;
 }
 
 .app__register-avatars label {

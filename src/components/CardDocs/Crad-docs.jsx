@@ -16,6 +16,9 @@ export default function Card({docs}) {
   const handleAppointementButton = () =>{
     navigate(`/Appointement/create/${docs.id}`)
   }
+  const handleDoctor = () =>{
+    navigate(`/doctor/${docs.id}`)
+  }
   return (
       
          <motion.div
@@ -40,7 +43,7 @@ export default function Card({docs}) {
                 </div>
                 <div className="app__doctor-card_button">
                   <PrimaryButton content='Book Now' onClick={handleAppointementButton} />
-                  <SecondaryButton content='More info' style={{margin:'0'}}/>
+                  <SecondaryButton content='More info' style={{margin:'0'}} onClick={handleDoctor}/>
                 </div>
                 
          

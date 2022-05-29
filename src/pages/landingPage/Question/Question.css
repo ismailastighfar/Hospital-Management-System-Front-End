@@ -41,6 +41,19 @@ a:hover {
   margin: 2rem 0;
 }
 
+@media screen and (max-width: 650px) {
+  .app__question p {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .app__question {
+    padding: 0;
+    height: 500px;
+  }
+}
+
 .app__question img {
   position: absolute;
   -o-object-fit: cover;
@@ -51,7 +64,7 @@ a:hover {
 
 @media screen and (max-width: 650px) {
   .app__question img {
-    width: 130%;
+    width: 160%;
   }
 }
 

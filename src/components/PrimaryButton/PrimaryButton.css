@@ -26,6 +26,10 @@ a:hover {
   width: 100%;
 }
 
+.primary-button button:disabled {
+  cursor: not-allowed;
+}
+
 .primary-button button:hover {
   background-color: #153572;
 }

@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+a:hover {
+  color: #0091ff;
+}
+
+.app__doctor-card {
+  min-width: 400px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2rem 0 0 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
+          box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
+}
+
+.app__doctor-card_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.app__doctor-card_container:hover img {
+  -webkit-transform: translateY(-2rem) scale(1.2);
+          transform: translateY(-2rem) scale(1.2);
+}
+
+.app__doctor-card_container img {
+  width: 260px;
+  height: 260px;
+  border-radius: 7px;
+  top: -15px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
+          box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.app__doctor-card_container h3 {
+  font-size: 1.4rem;
+}
+
+.app__doctor-card_container p {
+  text-align: justify;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.app__doctor-card_container h4 {
+  background: #3fa6ffc7;
+  color: #fff;
+  border-radius: 7px;
+  font-size: 0.7rem;
+  padding: 10px;
+}
+/*# sourceMappingURL=card-docs.css.map */

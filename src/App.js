@@ -9,6 +9,7 @@ import Drugs from './pages/Drugs/Drugs';
 import Profile from './pages/Profile/Profile';
 import CreateProfile from './pages/CreateProfile/CreateProfile'
 import CreateAppointement from './pages/CreateAppointement/CreateAppointement' 
+import Doctor from './pages/Doctor/Doctor'
 import  Questions  from './pages/Questions/Questions';
 import { Navigate, BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react';
@@ -46,6 +47,7 @@ function App() {
             <Route path="drugs" element={<Drugs />} />
             <Route path="Questions" element={<Questions />} />
             <Route path="Appointement/create/:id" element={<CreateAppointement />} />
+            <Route path="doctor/:id" element={<Doctor />} />
             <Route
             path='profile'
             element={ 
