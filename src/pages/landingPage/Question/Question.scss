@@ -45,11 +45,18 @@
 .app__question-input{
     position: relative;
     width: 70%;
-    svg{
+    button{
+        cursor: pointer;
         position: absolute;
-        right: 1rem;
-        bottom: 2.8rem;
+        right: 0;
+        bottom: 2.1rem;
         font-size: 1.5rem;
         color: $secondary-Color;
+        border: none;
+        padding: .7rem;
+        background-color: transparent;
+        display: grid;
+        place-content: center;
+        
     }
 }

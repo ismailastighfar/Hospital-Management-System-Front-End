@@ -25,11 +25,13 @@ export default function Doctor() {
       console.log(data)
   return (
     <div className='doctor-container'>
-       {data.map((doc) => {
-           return(
+        {data.map((doc) =>
+        {
+            return
+            (
             <div className='doc-grid-container'>
                <div className="doc-grid-img">
-                <img src={image} alt="img" />
+                <img src={image} alt="img" style={{ width: '100%'}}/>
                </div>
                <div className="doc-grid-content">
                    <h1>{doc.fname} {doc.lname}</h1>

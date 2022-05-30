@@ -34,7 +34,7 @@ function Register() {
     const data = JSON.stringify(form1);
 
     axios.defaults.withCredentials = true;
-      axios.get('http://localhost:8000/sanctum/csrf-cookie' ).then( () => {
+      axios.get('http://localhost:8000/sanctum/csrf-cookie').then( () => {
       axios.post('http://localhost:8000/api/users', data , { 
         headers:{ 
           'Content-Type': 'application/json; multipart/form-data',

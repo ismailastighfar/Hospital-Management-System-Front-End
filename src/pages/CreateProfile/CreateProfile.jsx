@@ -21,6 +21,7 @@ function CreateProfile() {
         user_id: '',
         allergies: '',
         sikness: '',
+        address: '',
         user_id : user.userDetails.user_id
     });
     const [form, setform] = useState({
@@ -33,6 +34,7 @@ function CreateProfile() {
         phone: '',
         avatar: '',
         sickness: '',
+        address: '',
         allergies: '',
     })
     useEffect(() => {
@@ -56,6 +58,7 @@ function CreateProfile() {
           cne: form.cne,
           dateOfBirth: form.year + '-' + form.month + '-'+ form.day,
           avatar: form.avatar,
+          address: form.address,
           allergies: form.allergies,
           sickness: form.sickness,
           user_id: profil.user_id
@@ -72,15 +75,14 @@ function CreateProfile() {
       
       let data = JSON.stringify(profil);
       
-      axios.defaults.withCredentials = true;
+      
       axios.get('http://localhost:8000/sanctum/csrf-cookie').then(() => {
 
           axios.post('http://localhost:8000/api/patients', data, { headers :{
               Authorization: `Bearer ${token}`,
               'Content-Type': 'application/json'
           }}).then((res) => {
-            console.log(res.data)
-            
+        
             let patient =  res.data.patient
             user = { ...user, userDetails: { ...user.userDetails, patient: patient}}
             localStorage.setItem('currentUser', JSON.stringify(user));
