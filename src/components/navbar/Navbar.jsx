@@ -41,7 +41,11 @@ export default function Navbar() {
        <div className='navbar-links-container'>
         <Link to="/">Home</Link>
         <Link to="/doctor/search">Find a Doctor</Link>
-
+        <Link to="/questions">Questions</Link>
+        <Link to="/drugs">Drugs</Link>
+        <Link to="/departemnet">Departement</Link>
+        <Link to="/contact">Contact</Link>
+        <Link to="/about">About </Link>
        </div>
         </div>
         
@@ -88,8 +92,13 @@ export default function Navbar() {
             }}
             className='navbar-menu-container'>
                 <div className='navbar-menu-container-links'>  
-                  <motion.div to="/" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.1, duration: .6}} onClick={ hideMenu }  ><Link to='/'>Home</Link> </motion.div>
-                  <motion.div to="/login" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.2, duration: .6}} onClick={ hideMenu }  ><Link to='/'>find a doctor</Link> </motion.div>
+                  <motion.div to="/" animate={{ x: [100 , 0 ] }} transition={{ delay: 0, duration: .6}} onClick={ hideMenu }  ><Link to='/'>Home</Link> </motion.div>
+                  <motion.div to="/doctor/search" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.1, duration: .6}} onClick={ hideMenu }  ><Link to='/'>Find a doctoe</Link> </motion.div>
+                  <motion.div to="/questions" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.2, duration: .6}} onClick={ hideMenu }  ><Link to='/'>Questions</Link> </motion.div>
+                  <motion.div to="/drugs" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.3, duration: .6}} onClick={ hideMenu }  ><Link to='/'>Drugs</Link> </motion.div>                 
+                  <motion.div to="/department" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.4, duration: .6}} onClick={ hideMenu }  ><Link to='/'>departments</Link> </motion.div>                 
+                  <motion.div to="/contact" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.5, duration: .6}} onClick={ hideMenu }  ><Link to='/'>contact</Link> </motion.div>                 
+                  <motion.div to="/about" animate={{ x: [100 , 0 ] }} transition={{ delay: 0.6, duration: .6}} onClick={ hideMenu }  ><Link to='/'>about</Link> </motion.div>                 
                 </div>
 
                 
@@ -103,7 +112,7 @@ export default function Navbar() {
                   }
                   {
                     user && (
-                      <p>{localStorage.getItem('fullname')}</p>
+                      <Link to='/profile' style={{ display: 'flex' , alignItems: 'center' , gap: '1rem'}}><img src={user.userDetails.patient.avatar} style={{ width: '50px'}} alt="" />{ user.userDetails.username }</Link> 
                     )
                   }
                    

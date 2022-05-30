@@ -1,0 +1,48 @@
+@import '../../index.scss';
+
+.app__questions{
+    margin: 0 6rem 4rem 6rem;
+    min-height: 80vh;
+    @media screen and  (max-width: 650px) {
+    }
+}
+.app__questions-content{
+    flex: 1;
+
+}
+.app__questions-content_item{
+    margin: 2rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    
+}
+.app__questions-content_item-det{
+    flex: 1;
+}
+.app__questions-content_item-det{
+    flex: 3;
+
+    h2{
+        margin: 1rem 0;
+        font-family: $secondary-font;
+        
+    }
+    h4{
+        font-family: $secondary-font;
+        color: $secondary-Color;
+        margin: .5rem 0 0 0;
+    }
+    p{
+        margin: 0 0 ;
+        font-weight: 700;
+        font-family: $secondary-font;
+        color: $gray-text;
+    }
+}
+.app__questions-content_item-img{
+    img{
+        width: 50px;
+        min-width: 50px;
+    }
+}

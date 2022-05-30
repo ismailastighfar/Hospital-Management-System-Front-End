@@ -12,40 +12,38 @@ import { CardDocs } from '../../components';
 export default function Doctor() {
 
     const params = useParams();
-    const [data , setData] = useState([{}]);
+    const [data , setData] = useState([]);
     
 
     useEffect(() => {
         axios.get(`http://127.0.0.1:8000/api/doctors/${params.id}`).then((res) => { 
-              setData(res.data)
+              setData([...res.data])
               console.log(data)
          })
       }, [])
 
-  return (
+    return (
     <div className='doctor-container'>
-       {data.map((doc) => {
-           return(
+        {
+            (
             <div className='doc-grid-container'>
                <div className="doc-grid-img">
-                <img src={image} alt="img" />
+                <img src={image} alt="img" style={{ width: '100%'}}/>
                </div>
                <div className="doc-grid-content">
-                   <h1>{doc.fname} {doc.lname}</h1>
-                   <p>Specialty : {doc.name}</p>
-                   <p>Department : {doc.dept_name}</p>
-                   <p>Description : {doc.description}</p>
-                   <p>Phone : {doc.phone} </p>
-                   <p>Email : {doc.email}</p>
+                   <h1>{data[0].fname} {data[0].lname}</h1>
+                   <p>Specialty : {data[0].name}</p>
+                   <p>Department : {data[0].dept_name}</p>
+                   <p>Description : {data[0].description}</p>
+                   <p>Phone : {data[0].phone} </p>
+                   <p>Email : {data[0].email}</p>
                    <div className="primary-button">
                       <button>Book Now</button>
                    </div>
                </div>
             </div>
-
-              
            )
-       })}
+        }
     </div>
   )
 }
