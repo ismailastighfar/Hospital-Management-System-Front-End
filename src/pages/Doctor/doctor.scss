@@ -1,10 +1,28 @@
-.doc-grid-conatiner{
+.doctor-container{
     display:grid;
     grid-template-columns:auto auto auto;
     gap:10px;
     padding: 10px;
+    width:1300px ;
 }
 
 .doc-grid-img img{
     width: 100%;
+}
+
+.doc-grid-container{
+    display:grid;
+    grid-template-columns:auto auto auto;
+    gap:10px;
+    margin-top: 200px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.doc-grid-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
 }
