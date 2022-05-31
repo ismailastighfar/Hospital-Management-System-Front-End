@@ -2,13 +2,13 @@
 
 .app__questions{
     margin: 0 6rem 4rem 6rem;
-    min-height: 80vh;
-    @media screen and  (max-width: 650px) {
+    min-height: 100vh;
+    @media screen and (max-width: 950px) {
+        margin: 2rem;
     }
 }
 .app__questions-content{
     flex: 1;
-
 }
 .app__questions-content_item{
     margin: 2rem 0;
@@ -34,11 +34,19 @@
         margin: .5rem 0 0 0;
     }
     p{
-        margin: 0 0 ;
+        margin: 0 0 .5rem 0 ;
         font-weight: 700;
         font-family: $secondary-font;
         color: $gray-text;
     }
+    a{
+        font-family: $secondary-font;
+        color: $primary-color;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
 }
 .app__questions-content_item-img{
     img{

@@ -36,7 +36,8 @@ function Questions() {
                   <h4>{ question.auther_username }</h4>
                   <p>{ question.created_at} </p>
                   <h2>{ question.content } ?</h2>
-                  <p>{question.answers.length} replay </p>
+                  <p>{question.answers.length} replay  </p>
+                  { question.answers.length != 0 && ( <a href="">see details</a> )}
                 </div>
               </div> )
           })

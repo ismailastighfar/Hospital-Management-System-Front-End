@@ -25,7 +25,7 @@ function Login() {
     }
     loginUser(dispatch, credits).then((response) => { 
       if(response.userDetails){
-        setTimeout(navigate('/profile'), 1000) 
+        navigate('/profile')
         return
       }
       return

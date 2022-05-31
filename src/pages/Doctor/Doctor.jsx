@@ -31,7 +31,7 @@ export default function Doctor() {
                 <img src={image} alt="img" style={{ width: '100%'}}/>
                </div>
                <div className="doc-grid-content">
-                   <h1>{data[0].fname} {data[0].lname}</h1>
+                   <h1> {data[0].lname}</h1>
                    <p>Specialty : {data[0].name}</p>
                    <p>Department : {data[0].dept_name}</p>
                    <p>Description : {data[0].description}</p>
