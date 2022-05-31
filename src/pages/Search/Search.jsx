@@ -10,36 +10,26 @@ import './search.scss'
 export default function Search() {
   const [specialities, setspecialities] = useState([])
   const [data , setData] = useState([]);
-  const [query , setQuery] = useState({
-    name: '',
-    specialty: ''
-  });
-  const [isload, setisload] = useState(false)
+  const [query , setQuery] = useState("");
+  const [value , setvalue] = useState("");
+
   const handelChange = (e) => {
-    let val = e.target.value
-    setQuery({
-      ...query,
-      [e.target.name]: val
-    })
-    console.log(query)
+    setvalue (e.target.value)
   }
+ 
   useEffect(() => {
     axios.get("http://127.0.0.1:8000/api/specialties").then((res) => { setspecialities(res.data) })
 
   }, [])
   
   useEffect(() => {
-    setisload(true)
-    let req = JSON.stringify(query)
-    axios.get(`http://127.0.0.1:8000/api/doctor/search?name=${query.name}&specialty=${query.specialty}`, req).then((res) => { 
+    const fetchDocs = async () => {
+      const res = await axios.get("http://127.0.0.1:8000/api/doctors");
       setData(res.data)
-      setisload(false)
-
-    } 
-      );
-  } , [query])
-
-  
+}
+    fetchDocs();
+} , [])
+console.log(data)
   
   return (
     <div className='app__doctors'>
@@ -47,36 +37,41 @@ export default function Search() {
 
         <div className="app__doctors-searchBar">
           <select name="specialty" className='app_input' id="" onChange={handelChange}>
-            <option value="">All</option>
+            <option value="">specialities</option>
             {
               specialities.map(
                 (spec) => {
                   return (
-                    <option value={spec.id} key={spec.id} >{spec.name}</option>
+                    <option value={spec.name} key={spec.id} >{spec.name}</option>
                   )
                 }
               )
             }
           </select>
-          <input className='app_input' type="text" placeholder='search...' onChange={handelChange} />
+          <input className='app_input' type="text" placeholder='search...'onChange={(e) => {
+              setQuery(e.target.value)
+            }}  />
           <FaSearch className='search-icon'></FaSearch>
         </div>
      
         <div className='app__doctors-items'>
-        {
-          isload && (
-            <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>  
-          )
-        }
-        { !isload &&
-          data.map(docs => 
+        {data.filter((val) => {
+        if(value == val.name)
+         return val 
+         else if (value == "") {
+           return val
+         }
+         
+       }).filter((val) => {
+      if (query == "") 
+        return val
+       else if (val.fname.toLowerCase().includes(query.toLowerCase()) || val.lname.toLowerCase().includes(query.toLowerCase()) ) 
+         return val
+     })
+      .map(docs => 
               <CardDocs key = {docs.id} docs = {docs} />
           )}
         </div>
-          
-          
-          
-    
          </div>
       
   )
