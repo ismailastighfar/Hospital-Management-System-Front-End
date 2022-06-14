@@ -17,15 +17,14 @@
     width: 40px;
     height: 40px;
     &:hover{
-        filter: brightness(0.7);
-        transform: scale(1.2);
+        filter: brightness(0.9);
         
     }
     }
 .app__profileBar-container.active{
     z-index: 100;
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1) translate(0);
     background-color: #fff;
 }
 .app__profileBar-container{
@@ -34,16 +33,16 @@
     position: absolute;
     padding: 1rem 0;
     height: max-content;
-    top: 180%;
-    right: 2rem;
+    top: 110%;
+    right: 4.2rem;
     width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center ;
     align-items: center;
     border: 2px solid #40404040;
-    transform: translateX(500px);
-    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+    transition: all 0.1s ease-in-out;
     img{
         width: 90px;
         height: 90px;

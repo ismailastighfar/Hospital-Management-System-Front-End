@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router'
 
 function CreateProfile() {
     const nav = useNavigate()
+
     const [isload, setisload] = useState(false)
     const [avatars, setavatars] = useState([])
     let user =  JSON.parse(localStorage.getItem('currentUser'))

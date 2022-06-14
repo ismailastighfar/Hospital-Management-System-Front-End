@@ -1,12 +1,28 @@
 @import '../../App.scss';
 .app__CreateAppointement{
-    margin: 7rem 6rem;
+    margin: 7rem 4rem;
 }
 .app__CreateAppointement-form{
-    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
     form{
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        flex: 2;
+        padding: 0 6rem;
     }
+    img{
+        flex: 1;
+        max-width: 300px;
+        margin: 2rem 0;
+    }
+}
+.app__CreateAppointement-form-date{
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

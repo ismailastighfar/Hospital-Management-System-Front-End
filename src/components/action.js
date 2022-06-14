@@ -6,7 +6,7 @@ axios.defaults.withCredentials = true
 export async function loginUser(dispatch, loginPayload) {
     let credits = JSON.stringify(loginPayload)
     dispatch({ type: 'REQUEST_LOGIN' });
-    return await axios.get(`${ROOT_URL}/sanctum/csrf-cookie`).then( () => {
+    return await axios.get(`${ROOT_URL}/sanctum/csrf-cookie`).then(() => {
         return  axios.post(`${ROOT_URL}/api/patient/login`, credits ,  { headers: { 'Content-Type': 'application/json' } } ).then(
         (res) => {
             let data ={

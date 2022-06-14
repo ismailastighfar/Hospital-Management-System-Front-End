@@ -1,0 +1,7 @@
+@import '../../index.scss';
+.app__about{
+    margin: 5rem 6rem;
+    @media screen and (max-width: 950px) {
+        margin: 4rem 2rem;
+    }
+}

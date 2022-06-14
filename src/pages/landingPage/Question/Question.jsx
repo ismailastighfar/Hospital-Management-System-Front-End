@@ -3,8 +3,10 @@ import './Question.scss'
 import { question } from '../../../assets'
 import { AiOutlineArrowRight  } from 'react-icons/ai'
 import axios from 'axios'
+import { useNavigate } from 'react-router'
 
 function Question() {
+  const nav = useNavigate()
   const data =  JSON.parse(localStorage.getItem('currentUser'))
   const token = Boolean(data)  ? data.token : ''
   const [quest, setquest] = useState('')
@@ -23,7 +25,8 @@ function Question() {
           'Content-Type': 'application/json; multipart/form-data',
         } 
       }).then( (res) => {
-        console.log(res.data)
+        console.log(res)
+        nav('/questions')
       })
     })
     }

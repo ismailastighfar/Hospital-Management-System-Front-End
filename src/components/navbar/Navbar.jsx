@@ -43,7 +43,6 @@ export default function Navbar() {
         <Link to="/doctor/search">Find a Doctor</Link>
         <Link to="/questions">Questions</Link>
         <Link to="/drugs">Drugs</Link>
-        <Link to="/departemnet">Departement</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/about">About </Link>
        </div>
@@ -96,7 +95,6 @@ export default function Navbar() {
                   <motion.div animate={{ x: [100 , 0 ] }} transition={{ delay: 0.1, duration: .6}} onClick={ hideMenu }  ><Link to='/doctor/search'>Find a doctoe</Link> </motion.div>
                   <motion.div  animate={{ x: [100 , 0 ] }} transition={{ delay: 0.2, duration: .6}} onClick={ hideMenu }  ><Link to='/questions'>Questions</Link> </motion.div>
                   <motion.div  animate={{ x: [100 , 0 ] }} transition={{ delay: 0.3, duration: .6}} onClick={ hideMenu }  ><Link to="/drugs">Drugs</Link> </motion.div>                 
-                  <motion.div  animate={{ x: [100 , 0 ] }} transition={{ delay: 0.4, duration: .6}} onClick={ hideMenu }  ><Link to="/department">departments</Link> </motion.div>                 
                   <motion.div  animate={{ x: [100 , 0 ] }} transition={{ delay: 0.5, duration: .6}} onClick={ hideMenu }  ><Link to="/contact">contact</Link> </motion.div>                 
                   <motion.div  animate={{ x: [100 , 0 ] }} transition={{ delay: 0.6, duration: .6}} onClick={ hideMenu }  ><Link to="/about">about</Link> </motion.div>                 
                 </div>

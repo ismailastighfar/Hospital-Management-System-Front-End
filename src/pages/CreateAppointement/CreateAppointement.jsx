@@ -1,8 +1,9 @@
 import React from 'react'
 import {useState} from 'react'
 import './CreateAppointement.scss'
+import { appointement } from '../../assets'
 import axios from 'axios'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 
 function CreateAppointement(props) {
     const params = useParams()
@@ -10,7 +11,7 @@ function CreateAppointement(props) {
     const token = user.token
     const [errorMessage, seterrorMessage] = useState("")
     const [successMessage, setsuccessrMessage] = useState("")
-
+    const nav = useNavigate()
     const [form, setfrom] = useState({
         doctor_id: params.id,
         patient_id: user.userDetails.patient.id,
@@ -18,11 +19,10 @@ function CreateAppointement(props) {
         time: '',
         date: ''
     });
-
+    const date = new Date();
     const handleChange = (e) =>{
         let value = e.target.value
         setfrom({ ...form, [e.target.name]: value })
-        console.log(form)
     }
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -44,15 +44,12 @@ function CreateAppointement(props) {
         })
     }
 
-
-
-
-
-
-
   return (
     <div className='app__CreateAppointement'>
+        
         <div className="app__CreateAppointement-form">
+            <img src={appointement} alt="" />
+            <form action="">
             {
                 errorMessage && (
                     <div >
@@ -60,26 +57,31 @@ function CreateAppointement(props) {
                     </div>
                 )
             }
-            
-            <form action="">
-                <textarea type="text" rows='5' name="details" id="" className='app_input' placeholder='details' onChange={handleChange} />
-            <input type="date" name="date" id="" className='app_input' placeholder='details' onChange={handleChange}/>
-            <input type="time" name="time" id="" className='app_input' placeholder='details' onChange={handleChange}/>
+            <textarea type="text" rows='5' name="details" id="" className='app_input' placeholder='details' onChange={handleChange} />
+                
+            <div className='app__CreateAppointement-form-date'>
+                <input type="number" name="number" min={date.getDate()} max="" className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
+                <input type="number" name="number" min={date.getMonth()} max=""  className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
+                <input type="number" name="number" min={date.getFullYear()} max=""  className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
+            </div>
+                <input type="number" name="number" min={9} max="16"  className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
             <div className="primary-button">
                 <button onClick={handleSubmit}>make appointement</button>
             </div>
-            </form>
             {
                 successMessage && (
-                    <div className=''>
+                    <div >
                         <p className='p_success'>{successMessage}</p>
                         <div className="secondary-button">
-                            <button>Go to your profile</button>
+                            <button onClick={() => nav('/profile')}>Go to your profile</button>
                         </div>
                     </div>
                 )
             }
+            </form>
+            
         </div>
+        
     </div>
   )
 }

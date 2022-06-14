@@ -3,30 +3,42 @@ import axios from 'axios'
 import { Question } from '../landingPage'
 import './Questions.scss' 
 function Questions() {
-
+  const [isload, setisload] = useState(false)
   const user =  JSON.parse(localStorage.getItem('currentUser'))
-  const patientid = user.userDetails.patient.id
   const token = user.token
   const [questions, setquestions] = useState([])
   useEffect(() => {
+    setisload(true)
     axios.get(`http://127.0.0.1:8000/api/questions`,{ headers: {
       Authorization: `Bearer ${token}`,
       'Content-Type': 'application/json'
     }}).then( (res) => {
        setquestions(res.data.data)
        console.log(questions)
+       setisload(false)
     })
   }, [])
   
-  
-
   return (
     <div>
       <Question />
       <div className="app__questions">
         <div className="app__questions-content">
+          { isload && 
+            (
+              <div >
+            <div className='loading'>
+              <div></div><div></div><div></div>
+            </div><div className='loading'>
+              <div></div><div></div><div></div>
+            </div><div className='loading'>
+              <div></div><div></div><div></div>
+            </div>
+              </div>
+            )
+          }
           {
-          questions.map((question) => {
+           questions.map((question) => {
             return (
               <div key={question.id} className="app__questions-content_item">
                 <div className="app__questions-content_item-img">

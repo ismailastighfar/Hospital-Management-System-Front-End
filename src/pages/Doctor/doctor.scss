@@ -1,10 +1,86 @@
-.doc-grid-conatiner{
-    display:grid;
-    grid-template-columns:auto auto auto;
-    gap:10px;
-    padding: 10px;
+@import '../../index.scss';
+.doctor-container{
+    margin: 5rem 6rem;
+    font-family: $secondary-font;
+    
+    @media screen and (max-width: 950px) {
+        margin: 4rem 1rem;
+    }
+    
+}
+.doc-grid-container{
+    padding: 6rem 0 ;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
-.doc-grid-img img{
-    width: 100%;
+.doc-grid-img {
+    flex: 1;
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+    position: relative;
+    
+    img{
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        left :2rem;
+        top: 0;
+        background-color: $primary-color;
+        z-index: -1;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        right: 2rem;
+        bottom: 0;
+        z-index: -1;
+        background-color: $secondary-Color;
+    }
 }
+
+
+.doc-grid-content{
+   flex: 2;
+   h1{
+       margin: 2rem 0;
+       font-size: 3rem;
+   }
+   .doc-grid-info{
+        color: $light-blue;
+        margin: 10px 0;
+        font-weight: 600;
+        display: flex ;
+        align-items: center;
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        p{
+            width: 200px;
+            svg{
+                margin-right: 10px;
+            }
+        }
+        span{
+            color: $gray-text;
+        }
+   }
+   .doc-grid-desc{
+       margin: .5rem 0;
+       span{
+            font-size: 1.4rem;
+           margin: 1rem;
+       }
+   }
+}
+

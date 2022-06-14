@@ -26,7 +26,6 @@
     h2{
         margin: 1rem 0;
         font-family: $secondary-font;
-        
     }
     h4{
         font-family: $secondary-font;
@@ -46,11 +45,42 @@
             text-decoration: underline;
         }
     }
-    
 }
 .app__questions-content_item-img{
     img{
         width: 50px;
         min-width: 50px;
+    }
+}
+.loading{
+    margin: 0 6rem 4rem 4rem;
+    
+    @media screen and (max-width: 950px){
+        margin: 2rem;
+    }
+    div:nth-child(1), div:nth-child(2), div:nth-child(3){
+        height: 20px;
+        margin: 1rem 0;
+        animation: load 1s ease infinite;
+    }
+    div:nth-child(1){
+        width: 300px;
+    }
+    div:nth-child(2){
+        width: 380px;
+    }
+    div:nth-child(3){
+        width: 100px;
+    }
+}
+@keyframes  load {
+    0%{
+        background-color: #40404020;
+    }
+    50%{
+        background-color: #40404010;
+    }
+    100%{
+        background-color: #40404020;
     }
 }

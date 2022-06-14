@@ -2,7 +2,7 @@ import React, { useState} from 'react'
 import './ProfileBar.scss'
 import {logout} from '../../components/action'
 import { useAuthDispatch } from '../../components/AuthContext'
-import { useNavigate } from 'react-router'
+import { Navigate, useNavigate } from 'react-router'
 function ProfileBar({user}) {
   const [show, setshow] = useState(false)
   const toggleBar = () =>{
@@ -21,7 +21,7 @@ function ProfileBar({user}) {
           <img src={user.patient.avatar} alt="" />
           <h2>{user.patient.fullname}</h2>
           <h3>{user.username}</h3>
-          <div className="primary-button" style={{  width: '80%'}}>
+          <div className="primary-button" style={{  width: '80%'}} onClick={ () => navigat('/profile')}>
             <button>Viste Your Profile</button>
           </div>
           <div className="secondary-button" style={{ margin: '1rem 0', width: '80%'}} onClick={handelLogOut}>

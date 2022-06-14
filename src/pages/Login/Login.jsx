@@ -25,6 +25,7 @@ function Login() {
     }
     loginUser(dispatch, credits).then((response) => { 
       if(response.userDetails){
+      
         navigate('/profile')
         return
       }

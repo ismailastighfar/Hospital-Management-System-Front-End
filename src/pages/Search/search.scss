@@ -14,6 +14,9 @@
             color: $secondary-Color;
         }
     }
+    @media screen and (max-width: 950px) {
+      margin: 7rem 2rem;
+    }
 }
 .app__doctors-searchBar{
     width: 50%;

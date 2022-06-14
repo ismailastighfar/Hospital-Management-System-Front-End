@@ -1,6 +1,6 @@
 @import '../../index.scss';
 .app__doctor-card{
-  min-width: 400px;
+  min-width: 300px;
   width: min-content;
   padding: 2rem;
   display: flex ;
@@ -8,24 +8,43 @@
   margin: 2rem 0 0 0;
   justify-content: space-between;
   box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
+  &:hover img{
+    transform: translateY(-2rem) scale(1.2);
+  }
 }
 .app__doctor-card_container{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;  
+  align-items: flex-start;  
   position: relative;
   
-  &:hover img{
-      transform: translateY(-2rem) scale(1.2);
+  &::before{
+      content: attr(data-content);
+      position: absolute;
+      width: max-content;
+      height: min-content;
+      color: #fff;
+      font-size: 0.8rem;
+      top: -15px;
+      left: -20%;
+      z-index: 1;
+      padding: 10px 1rem;
     }
+    &[data-style=false]::before{
+      background-color: #ff3e1cc7;
+    }
+    &[data-style=true]::before{
+      background-color: #3fa6ffc7;
+    }
+
   img{
-    width: 260px;
-    height: 260px;
-    border-radius: 7px;
-    top: -15px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    height: 200px;
     object-fit: cover;
-    margin-bottom: 2rem;
+    margin: 0 auto  2rem auto;
     box-shadow: 0 4px 8px 0 rgba(94, 94, 94, 0.1), 0 6px 20px 0 rgba(94, 94, 94, 0.1);
     transition: all 0.4s ease-in-out;
     
@@ -35,14 +54,12 @@
   }
   p{
     text-align: justify;
-    text-align: center;
     padding: 1rem 0;
   }
   h4{
-    background: #3fa6ffc7;
-    color: #fff;
+    color: #3fa6ffc7;
     border-radius: 7px;
-    font-size: 0.7rem;
-    padding: 10px;
+    font-size: 1rem;
+    margin: 10px 0;
   }
 }

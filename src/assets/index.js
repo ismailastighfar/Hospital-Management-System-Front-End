@@ -12,6 +12,7 @@ export { default as register2 } from './register2.png';
 export { default as question } from './question.jpg';
 export { default as login } from './login.png'
 export { default as register } from './register.png'
+export { default as appointement } from './appointement.png'
 
 
 

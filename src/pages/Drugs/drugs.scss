@@ -1,17 +1,27 @@
 @import '../../index.scss';
 
 .drugs{
-    margin-top: 100px;
+    
+    margin: 5rem 6rem ;
+    @media screen and (max-width: 950px) {
+        margin: 5rem 1rem;
+    }
+    h1{
+        text-align: center;
+        font-family: $secondary-font;
+        color: $primary-color;
+            span{
+                color: $secondary-Color;
+            }
+        }
 }
 .drugs-flex{
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     align-items: stretch;
-    justify-content: center;
+    justify-content: flex-start;
     gap:2rem;
-    margin-bottom: 2rem;
-
 }
 
 
@@ -24,16 +34,24 @@
     align-items: stretch;
     font-family: $secondary-font;
     cursor: pointer;
-    border: 1px solid #a2a2a2;
+    border: 1px solid $primary-color;
     transform: scale(0.9);
     transition: all 0.3s;
-   
+    @media screen and (max-width: 950px) {
+        flex-direction: column;
+        align-items: center;
+        border: none;
+        &:hover{
+            box-shadow: none;
+            transform: none;
+        }
+    }
+    &:hover{
+        box-shadow: 0 0 14px 0px #34343423;
+        transform: scale(1);
+    }
 }
 
-.drugs-container:hover{
-    box-shadow: inset -3px -2px 14px 0px #3434344f;
-    transform: scale(1);
-}
 
 .drugs-content{
    display: flex;
@@ -55,27 +73,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    // width: 50%;
-    // height: 50%;
 }
 
-// .drugs-container .drugs-img:before {
-//     position: absolute;
-//     top: 0px;
-//     left: 24px;
-//     color: #000;
-//     opacity: 0.2;
-//     font-size: 8em;
-//     font-weight: 800;
-// }
 
-// .drugs-container .drugs-img img {
-//     position: relative;
-//     width: 700px;
-//     transform: rotate(-30deg);
-//     left: -50px;
-//     transition: .9s linear;
-// }
 
 .drugs-container .drugs-details {
     display: flex;
@@ -85,6 +85,10 @@
     height: 100%;
     box-sizing: border-box;
     padding: 40px;
+    @media screen and (max-width: 950px){
+        width: 100%;
+        
+    }
 }
 
 .drugs-container .drugs-details h2{
