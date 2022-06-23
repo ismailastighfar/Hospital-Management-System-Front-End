@@ -1,0 +1,10 @@
+@import url('../../index.scss');
+.app__question-content_item{
+    display: flex;
+    justify-content: center;
+    margin: 2rem 8rem;
+}
+.app__questions{
+    background-color: #40404010;
+    padding: 2rem;
+}

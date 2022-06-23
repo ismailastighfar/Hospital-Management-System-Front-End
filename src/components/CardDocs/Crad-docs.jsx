@@ -31,7 +31,7 @@ export default function Card({docs}) {
          className="app__doctor-card">
         
               <div className="app__doctor-card_container" data-content={docs.availability} data-style={ docs.availability == 'Unavailable' ? 'false' : 'true'  }>
-                <img src={image} alt="img"  />
+                <img src={docs.picture} alt="img"  />
                 <h3> {docs.fname} {docs.lname} </h3>
                 <p> {docs.description}</p>
                 <h4>Specialty: {docs.specialty.name}</h4>

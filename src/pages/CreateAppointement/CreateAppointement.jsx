@@ -60,11 +60,9 @@ function CreateAppointement(props) {
             <textarea type="text" rows='5' name="details" id="" className='app_input' placeholder='details' onChange={handleChange} />
                 
             <div className='app__CreateAppointement-form-date'>
-                <input type="number" name="number" min={date.getDate()} max="" className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
-                <input type="number" name="number" min={date.getMonth()} max=""  className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
-                <input type="number" name="number" min={date.getFullYear()} max=""  className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
+                <input type="date" name="date" id="date" className='app_input' onChange={handleChange} />
             </div>
-                <input type="number" name="number" min={9} max="16"  className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
+                <input type="time" name="time" min={9} max="16"  className='app_input' placeholder='from 9 AM to 16 PM' onChange={handleChange}/>
             <div className="primary-button">
                 <button onClick={handleSubmit}>make appointement</button>
             </div>

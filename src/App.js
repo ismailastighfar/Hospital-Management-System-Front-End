@@ -11,6 +11,7 @@ import CreateProfile from './pages/CreateProfile/CreateProfile'
 import CreateAppointement from './pages/CreateAppointement/CreateAppointement' 
 import Doctor from './pages/Doctor/Doctor'
 import  Questions  from './pages/Questions/Questions';
+import  Answers  from './pages/Answers/Answers';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import { Navigate, BrowserRouter, Routes, Route } from "react-router-dom";
@@ -47,6 +48,7 @@ function App() {
             <Route path="doctor/search" element={<Search />} />
             <Route path="drugs" element={<Drugs />} />
             <Route path="Questions" element={<Questions />} />
+            <Route path="answers/:id" element={<Answers />} />
             <Route path="Appointement/create/:id" element={<CreateAppointement />} />
             <Route path="about" element={<Contact />} />
             <Route path="Contact" element={<About />} />

@@ -27,11 +27,12 @@ function Question() {
       }).then( (res) => {
         console.log(res)
         nav('/questions')
+        window.location.reload();
       })
     })
     }
     else{
-      return false
+    return false
     }
     
   }

@@ -50,11 +50,11 @@ function Profile() {
               <h3>Health Situation</h3>
               <h4>sickness: </h4>
               <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,{patient.sickness}
+                { patient.sickness }
               </p>
               <h4>allergess: </h4>
               <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever {patient.allergies}
+                { patient.allergies }
               </p>
             </div>
         </div>

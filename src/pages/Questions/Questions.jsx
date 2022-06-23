@@ -2,11 +2,14 @@ import React, {useEffect, useState } from 'react'
 import axios from 'axios'
 import { Question } from '../landingPage'
 import './Questions.scss' 
+import { useNavigate } from 'react-router'
 function Questions() {
+  const nav = useNavigate()
   const [isload, setisload] = useState(false)
   const user =  JSON.parse(localStorage.getItem('currentUser'))
   const token = user.token
-  const [questions, setquestions] = useState([])
+  const [questions, setquestions] =  useState([])
+  
   useEffect(() => {
     setisload(true)
     axios.get(`http://127.0.0.1:8000/api/questions`,{ headers: {
@@ -17,8 +20,11 @@ function Questions() {
        console.log(questions)
        setisload(false)
     })
+    
   }, [])
-  
+  const  hundelAnswer = (id) =>  {
+    nav(`/answers/${id}` );
+  }
   return (
     <div>
       <Question />
@@ -49,7 +55,7 @@ function Questions() {
                   <p>{ question.created_at} </p>
                   <h2>{ question.content } ?</h2>
                   <p>{question.answers.length} replay  </p>
-                  { question.answers.length != 0 && ( <a href="">see details</a> )}
+                  { question.answers.length != 0 && ( <button type="button" href=""  onClick={ () => hundelAnswer(question.id) } style={{ cursor: 'pointer', border:'none', color:'blue' , background: '#40404020', padding: '.4rem .8rem .2rem .8rem', margin:'1rem 0 0 0 ' }}> <p>see answer</p> </button> )}
                 </div>
               </div> )
           })
