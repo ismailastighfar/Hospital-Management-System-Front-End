@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 import { motion } from 'framer-motion';
 import { RiMenu3Line , RiCloseLine} from 'react-icons/ri';
 import { PrimaryButton, SecondaryButton } from '../';
+import { logo  } from '../../assets';
 import { Link, useNavigate } from "react-router-dom";
 import './navbar.scss'
 import ProfileBar from '../ProfileBar/ProfileBar';
@@ -36,7 +37,7 @@ export default function Navbar() {
       <div className='navbar'>
       <div className='navbar-links'>
        <div className='navbar-links-logo'>
-         <p>Midi<span>Aid</span></p>
+         <img src={logo} alt="" />
        </div>
        <div className='navbar-links-container'>
         <Link to="/">Home</Link>
@@ -45,7 +46,7 @@ export default function Navbar() {
         <Link to="/drugs">Drugs</Link>
         <Link to="/contact">Contact</Link>
         <Link to="/about">About </Link>
-       </div>
+        </div>
         </div>
         
         

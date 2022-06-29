@@ -89,6 +89,7 @@ function CreateProfile() {
             localStorage.setItem('currentUser', JSON.stringify(user));
             setisload(false)
             nav('/profile')
+            window.location.reload()
           }
             ).catch( error => {
             setisload(false)

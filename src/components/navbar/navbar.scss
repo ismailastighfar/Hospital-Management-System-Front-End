@@ -25,7 +25,7 @@
     flex: 1;
     display: flex;
     justify-content: flex-start;
-    align-items: baseline;
+    align-items: center;
     gap: 1rem;
     max-width: min-content;
     padding: 1rem 0;
@@ -34,12 +34,12 @@
 
 .navbar-links-logo{
     user-select: none;
-    p {
-        color: $gray-text;
-        font-size: 30px;
-    }
-     p span{
-        color: $light-blue;
+    position: relative;
+    width: 80px;
+    img{
+        top: -30px;
+        width: 80px;
+        position: absolute;
     }
 }
 

@@ -38,7 +38,7 @@ export default function Card({docs}) {
                 <h4>Department: {docs.department.dept_name}</h4>
               </div>
                 <div className="app__doctor-card_button">
-                  <PrimaryButton content='Book Now' onClick={handleAppointementButton} />
+                { docs.availability == 'Available' && (<PrimaryButton content='Book Now' onClick={handleAppointementButton} />)  }
                   <SecondaryButton content='More info' style={{margin:'0'}} onClick={handleDoctor}/>
                 </div>
                 

@@ -11,7 +11,10 @@ export { default as doctor } from './doctor.png';
 export { default as register2 } from './register2.png';
 export { default as question } from './question.jpg';
 export { default as login } from './login.png'
+export { default as logo } from './logo.png'
 export { default as register } from './register.png'
+export { default as penicillin } from './Penicillin.jpg'
+export { default as insulin } from './insulin.jpg'
 export { default as appointement } from './appointement.png'
 
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {FaSearch} from 'react-icons/fa';
-import image from '../../assets/drugs/doliprane.jpg';
+import {insulin , penicillin } from '../../assets';
 
 
 import axios from 'axios';
@@ -76,7 +76,7 @@ console.log(value)
         return(
         <div className="drugs-container">
           <div className="drugs-img">
-            <img src={image} alt="img" style={{width:"250px"}}/>
+            <img src={drug.name == 'Insulin' ?  insulin : penicillin } alt="img" style={{width:"250px"}}/>
           </div>
           <div className="drugs-details">
             <div className="drugs-content">
@@ -86,7 +86,7 @@ console.log(value)
                 
                 <h3>{drug.price} dh</h3>
                 <div className="primary-button">
-                  <button>Order Now</button>
+                  <button>More Info</button>
                 </div>
                    
             </div>
@@ -95,8 +95,7 @@ console.log(value)
         )
       }
       )}
-   
-          
+      
         </div>  
          
     </div>
